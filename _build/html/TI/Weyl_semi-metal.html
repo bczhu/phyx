@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Weyl Semi-metal &mdash; Physics 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Physics 0.1 documentation" href="../index.html"/>
+        <link rel="next" title="Linear response theory" href="../CMP/linear response theory/main.html"/>
+        <link rel="prev" title="Preliminary" href="Berry&#39;s Phase/Preliminary.html"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42580598-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8a3e22ee1e151444cc6469d69651f3eb' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../index.html" class="fa fa-home"> Physics</a>
+        
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../CM/Lagrangian.html">Phase space Lagrangian</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CM/Lagrangian.html#regular-derivation">Regular derivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CM/Lagrangian.html#dynamic-system">Dynamic system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CM/Lagrangian.html#id4">Phase space Lagrangian</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Lecture notes/main.html">Lecture notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Lecture notes/1.html">Lecture 1 : 1-d SSH model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Lecture notes/2.html">Lecture 2 : Berry Phase and Chern number</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Berry's Phase/main.html">Berry&#8217;s Phase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Berry's Phase/Preliminary.html">Preliminary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Berry's Phase/main.html#some-topics">some topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Weyl Semi-metal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#graphene">Graphene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#three-dimension-weyl-semi-metal-and-chern-number">Three dimension: Weyl semi-metal and Chern number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bulk-boundary-corresponding">Bulk-boundary corresponding</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CMP/linear response theory/main.html">Linear response theory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CMP/linear response theory/Kubo_formula.html">Kubo formula</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CMP/Fermi's_Golden_rule.html">Fermi&#8217;s Golden rule</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Python/note.html">Python 学习</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Physics</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Weyl Semi-metal</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/TI/Weyl_semi-metal.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="weyl-semi-metal">
+<span id="id1"></span><h1>Weyl Semi-metal<a class="headerlink" href="#weyl-semi-metal" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="graphene">
+<h2>Graphene<a class="headerlink" href="#graphene" title="Permalink to this headline">¶</a></h2>
+<p>In the tight-binding approximation, when only nearest neighborhood couplings are considered, the Hamiltonian of Graphene can be written as:</p>
+<div class="math">
+\[\begin{split}\hat{H}(\vec{k})=-t\begin{pmatrix}0 &amp;h(\vec{k})\\h^*(\vec{k}) &amp;0\end{pmatrix}\end{split}\]</div>
+<p>where <span class="math">\(h(\vec{k})=\sum\limits_{\vec{\delta}_i}e^{i\vec{k}\cdot\vec{\delta}_i}=|h(\vec{k})|e^{i\phi(\vec{k})},\vec{\delta}_i\)</span> are three position vectors shown in the following diagram.</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/12.png"><img alt="../_images/12.png" src="../_images/12.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text"><strong>Fig. 1</strong>  Crystal Structure of Graphene: <span class="math">\(\vec{a}_{1}\)</span> and <span class="math">\(\vec{a}_{2}\)</span>
+are Bravais crystal vectors for a Graphene unit cell. Each primitive
+unit cell has two atomic sties, A and B. <span class="math">\(\vec{\delta}_{i}\)</span> specifies
+B-s&#8217; position around A site. (b) Brillouin Zone for Graphene
+<span class="math">\(\vec{b}_{1}\)</span> and <span class="math">\(\vec{b}_{2}\)</span> are reciprocal vector basis for
+intrinsic Graphene. Its corners are known as K and K&#8217; points.</span></p>
+</div>
+<p>Then the Hamiltonian is:</p>
+<div class="math">
+\[\begin{split}\hat{H}(\vec{k})=-t|h(\vec{k})|\begin{pmatrix}0 &amp;e^{i\phi(\vec{k})}\\e^{-i\phi(\vec{k})} &amp;0\end{pmatrix}\end{split}\]</div>
+<p>with the eigen-value: <span class="math">\(E(\vec{k})=-t|h(\vec{k})|\)</span> and eigen-function (only show one of the two):</p>
+<div class="math">
+\[\begin{split}u(\vec{k})=\frac{1}{\sqrt{2}}\begin{pmatrix}e^{i\phi(\vec{k})/2}\\e^{-i\phi(\vec{k})/2} \end{pmatrix}e^{i\psi(\vec{k})}\end{split}\]</div>
+<p>We should notice that the <span class="math">\(1/2\)</span> factor is quite important here, when <span class="math">\(\phi\)</span> changes <span class="math">\(2\pi\)</span>, the wave-function does not return to its original value, but with a minus sign. If instead, we want the wave-function to be single valued, the function :math:<a href="#id2"><span class="problematic" id="id3">`</span></a>psi(vec{k})`should change accordingly.</p>
+<p>At the vicinity of Dirac point (K or K&#8217;, here we expand the things near K), we have:</p>
+<div class="math">
+\[\begin{split}\hat{H}(\vec{K}+\vec{q})=&amp;\alpha\begin{pmatrix}0&amp;q_x+iq_y\\q_x-iq_y&amp;0\end{pmatrix}=\alpha(q_x\sigma_x-q_y\sigma_y) \\
+=&amp;\alpha|q|\begin{pmatrix}0 &amp;e^{i\phi(\vec{q})}\\e^{-i\phi(\vec{q})} &amp;0\end{pmatrix}\end{split}\]</div>
+<p>We can see that the general <span class="math">\(\phi\)</span> turn out to be the angle of <span class="math">\(\vec{q}\)</span> with the x axis. Then, wind a circle around the Dirac point K at some energy in the band structure shown below (Fig. 2(a)), the corresponding <span class="math">\(\phi\)</span> (Fig. 2(c))winds one round too.</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/2.png"><img alt="../_images/2.png" src="../_images/2.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-text"><strong>Fig. 2</strong> Dirac cone and the winding of <span class="math">\(\vec{q}\)</span> and <span class="math">\(\phi\)</span></span></p>
+</div>
+<p>So, if <span class="math">\(\vec{q}\)</span> circles around the Dirac point one turn, <span class="math">\(\phi\)</span> changes from 0 to <span class="math">\(2\pi\)</span>, in order to keep the basic wave-function <span class="math">\(u(\vec{q})\)</span> single-valued, <span class="math">\(\psi\)</span> <strong>must</strong> changes <span class="math">\(\pi\)</span>.</p>
+<p>More explicitly, we calculate the vector potential in momentum space with:</p>
+<div class="math">
+\[\vec{A}(\vec{k})=i\langle u^\dagger |\nabla_{\vec{k}} u(\vec{k})\rangle=-\nabla \psi(\vec{k})\]</div>
+<p>Then we get:</p>
+<div class="math">
+\[\gamma=\oint{\vec{A}\cdot d\vec{k}} =-\psi(\phi=2\pi)+\psi(\phi(0))=-\pi\]</div>
+<p>We got the Berry&#8217;s phase <span class="math">\(\gamma=\pm\pi\)</span>. It is this non-trivial phase of the equal-frequency surface that makes us call it <strong>Weyl semi-metal</strong>, and the <em>Dirac points</em> called <em>Weyl nodes</em>.</p>
+</div>
+<div class="section" id="three-dimension-weyl-semi-metal-and-chern-number">
+<h2>Three dimension: Weyl semi-metal and Chern number<a class="headerlink" href="#three-dimension-weyl-semi-metal-and-chern-number" title="Permalink to this headline">¶</a></h2>
+<p>In three dimension, things can goes the same way. Using a simple model with Hamiltonian:</p>
+<div class="math">
+\[H(\vec{k})=\left[-2t_x\left(cosk_x-cosk_0\right)+m\left(2-cosk_y-cosk_z\right)\right]\sigma_x+2t_ysink_y\sigma_y+2t_zsink_z\sigma_z\]</div>
+<p>It has two Weyl nodes: <span class="math">\(\vec{K}=\pm\left(k_0,0,0\right)\)</span>, which means if we treat <span class="math">\(k_x\)</span> as a variable, only when <span class="math">\(k_x=\pm k_0\)</span>, the corresponding energy band <span class="math">\(E_{k_x}(k_y,k_z)\)</span> is crossing at the point <span class="math">\(k_y,k_z=(0,0)\)</span>.</p>
+<p>Also, at the Weyl node (say <span class="math">\(k_x=k_0\)</span>), we have:</p>
+<div class="math">
+\[H(\vec{K}+\vec{q})=v_xq_x\sigma_x+v_yq_y\sigma_y+v_zq_z\sigma_z\]</div>
+<p>with <span class="math">\(v_x=2t_xsink_0,v_y=2t_y,v_z=2t_z\)</span>. Without loss of generality, we can set <span class="math">\(v_x=v_y=v_z\)</span> (the only effect is the shape changing from sphere to ellipsoid, which has no effect on the topology), then we get:</p>
+<div class="math">
+\[H(\vec{K}+\vec{q})=v\vec{q}\cdot\vec{\sigma}\]</div>
+<p>with eigen-value: <span class="math">\(E(\vec{k})=v|\vec{q}|\)</span> and eigen-function (only show one of the two):</p>
+<div class="math">
+\[\begin{split}u(\vec{k})=\begin{pmatrix}sin\frac{\theta}{2}\\-cos\frac{\theta}{2}e^{i\phi}\end{pmatrix}e^{i\chi}\end{split}\]</div>
+<p>It is easy to find that this wave-function will give us a magnetic field with a monopole at <span class="math">\(\vec{K}\)</span>, which will give us non-trivial equal-frequency surface Chern number <span class="math">\(C=1\)</span>.</p>
+</div>
+<div class="section" id="bulk-boundary-corresponding">
+<h2>Bulk-boundary corresponding<a class="headerlink" href="#bulk-boundary-corresponding" title="Permalink to this headline">¶</a></h2>
+<p>In order to see things clearer, also, to see the connection of Weyl semi-metal with Topological insulator, we treat <span class="math">\(k_x\)</span> as a variable, the Hamiltonian is:</p>
+<div class="math">
+\[H_{k_x}(k_y,k_z)=\vec{h}(\vec{k})\cdot\sigma=\left[-2t_x\left(cosk_x-cosk_0\right)+m\left(2-cosk_y-cosk_z\right)\right]\sigma_x+2t_ysink_y\sigma_y+2t_zsink_z\sigma_z\]</div>
+<p>For example, we set <span class="math">\(t_x=t_y=t_z=1,m=2,k_0=1\)</span>, three typical energy band dispersions shown below:</p>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/31.png"><img alt="../_images/31.png" src="../_images/31.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text"><strong>Fig. 3</strong> Typical energy band dispersion with (a) <span class="math">\(k_x=0\)</span>, (b) <span class="math">\(k_x=k_0=1\)</span>, (c) <span class="math">\(k_x=2\)</span>.</span></p>
+</div>
+<p>To see if the system with <span class="math">\(k_x\neq k_0\)</span> is a topological insulator or not, we can plot the diagram of <span class="math">\(\vec{h}(k_y,k_z)\)</span>, and see how many times the resulting torus incorporates the origin point. Typical shape of the torus shows below:</p>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/4.jpg"><img alt="../_images/4.jpg" src="../_images/4.jpg" style="width: 45%;" /></a>
+<p class="caption"><span class="caption-text"><strong>Fig. 4</strong> Typical torus of <span class="math">\(\vec{h}(k_y,k_z)\)</span> with <span class="math">\(k_x=0\)</span>.</span></p>
+</div>
+<p>We found that at the region <span class="math">\(k_x=[-k_0,k_0]\)</span>, the origin point is in the torus once with Chern number <span class="math">\(C=1\)</span>, outside of that, we got <span class="math">\(C=1\)</span> (Noticing we have <span class="math">\(k_x=[-\pi,\pi]\)</span>) . This is why we plot the edge state in Fig. 4(a), but not in Fig. 4(c). In the non-trivial case, for any energy inside the gap, we get a edge state, so different <span class="math">\(k_x\)</span> will give us a edge-state line, which is called <em>Fermi-arc</em>, especially, when we look at the case of Fermi surface with energy <span class="math">\(E=0\)</span>, the Fermi-arc stretch from one Weyl node to another, like the picture shown below:</p>
+<div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/5.png"><img alt="../_images/5.png" src="../_images/5.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-text"><strong>Fig. 5</strong> Fermi arc.</span></p>
+</div>
+<p>Alternatively, we can look at the Bulk-boundary corresponding another way. The Weyl points behave like “magnetic” monopoles in momentum space whose charge is given by the chirality; they are actually a source of “Berry flux” rather than magnetic flux.</p>
+<p>Consider a curve in the surface Brillouin zone encircling the projection of the bulk Weyl point, which is traversed counterclockwise as we vary the parameter <span class="math">\(\lambda: 0 \to 2\pi; \mathbf{k}_{\lambda} = [k_x (\lambda),k_y (\lambda)]\)</span> [see Fig. 6(a)].We show that the energy <span class="math">\(\lambda\)</span> of a surface state at momentum <span class="math">\(\mathbf{k}_{\lambda}\)</span> crosses <span class="math">\(E = 0\)</span> at some value of <span class="math">\(\lambda\)</span>. Consider <span class="math">\(H(\lambda,k_z) = H(\mathbf{k}_{\lambda},k_z)\)</span>, which can be interpreted as the gapped Hamiltonian of a two-dimensional system (with <span class="math">\(\lambda\)</span> and <span class="math">\(k_z\)</span> as the two momenta). The two periodic parameters <span class="math">\(\lambda\)</span> , <span class="math">\(k_z\)</span> define the surface of a torus in momentum space. The Chern number of this two-dimensional band structure is given by the Berry curvature integration: <span class="math">\(\frac{1}{2\pi}\int\mathscr{F}dk_zd\lambda\)</span>, which, by the Stokes theorem, simply corresponds to the net monopole density enclosed within the torus. This is obtained by summing the chiralities of the enclosed Weyl nodes. Consider the case when the net chirality is unity, corresponding to a single enclosed Dirac node. Then, the two-dimensional subsystem is a quantum Hall insulator with unit Chern number. When the
+system is given a boundary at <span class="math">\(z = 0\)</span>, we expect a chiral edge state for this subsystem [see Fig. 6(b)]. Hence, this surface state crosses zero energy somewhere on the surface Brillouin zone <span class="math">\(\mathbf{k}_{\lambda_0}\)</span> . Such a state can be obtained for every curve enclosing the Weyl point. Thus, at zero energy, there is a Fermi line in the surface Brillouin zone, that terminates at the Weyl point momenta [see Fig. 6(c)]. An arc beginning on a Weyl point of chirality c has to terminate on a Weyl point of the opposite chirality. Clearly, the net chirality of the Weyl points within the <span class="math">\((\lambda,k_z)\)</span> torus was a key input in determining the number of these states. If Weyl points of opposite chirality line up along
+the <span class="math">\(k_z\)</span> direction, then there is a cancellation and no surface states are expected.</p>
+<div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/6.png"><img alt="../_images/6.png" src="../_images/6.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text"><strong>Fig. 6</strong> Illustration of surface states arising from bulk Weyl points.</span></p>
+</div>
+<p><strong>References:</strong></p>
+<ol class="arabic simple">
+<li><ol class="first upperalpha" start="24">
+<li>Wan, A.M. Turner, A. Vishwanath, and S.Y. Savrasov, Physical Review B <strong>83</strong>, 205101 (2011).</li>
+</ol>
+</li>
+<li>A.M. Turner, A. Vishwanath, and C.O. Head, Topological Insulators <strong>6</strong>, 293 (2013).</li>
+<li><ol class="first upperalpha" start="6">
+<li>Haldane, Physical Review Letters <strong>93</strong>, 206602 (2004).</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../CMP/linear response theory/main.html" class="btn btn-neutral float-right" title="Linear response theory">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Berry&#39;s Phase/Preliminary.html" class="btn btn-neutral" title="Preliminary"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, bczhu.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

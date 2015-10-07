@@ -1,0 +1,718 @@
+Lecture 1 : 1-d SSH model
+=========================
+
+The Su-Schrieffer--Heeger (SSH) model
+-------------------------------------
+
+The simplest non-trivial topology : 1-d lattice.
+
+Peierls instability makes the atoms dimerize. 
+
+.. figure:: images/1/1.png
+   :width: 70%
+   :align: center
+
+Polyacetylene Structure: 
+
+.. figure:: images/1/2.jpg
+   :width: 70%
+   :align: center
+
+Tight-binding method: first quantization
+---------------------------------------
+
+.. figure:: images/1/3.png
+   :alt: 1-d atom chain
+   :width: 70%
+   :align: center
+
+   1-d atom chain
+Tight-binding method: Single electron total Hamiltonian in atom chain:
+
+.. math::  H=\frac{p^2}{2m}+U(x)
+
+with periodical potential: :math:`U(x+na)=U(x)`
+
+Assume single atom potential :math:`V(x)` with Hamiltonian
+
+.. math:: H_0=\frac{p^2}{2m}+V(x)
+
+--------------
+
+and well solved eigen-value and eigen-wave-function:(consider only one
+state)
+
+.. math:: H_0\phi(x)=E_0\phi(x)
+
+Do the combination
+
+.. math:: \psi(x)=\sum\limits_n a_n\phi_n
+
+with :math:`\phi_n=\phi(x-x_n), x_n=na`. Define
+:math:`\Delta U(x)=U(x)-V(x)`, and substitute following equation
+
+.. math::  H\psi=\left(H_0+\Delta U\right)\psi=E\psi
+
+we get
+
+.. math:: \sum_n \langle \phi_m|\Delta U(x-x_n)|\phi_n\rangle a_n=(E-E_0)a_m
+
+--------------
+
+Define:
+:math:`\langle \phi(x-ma+na)|\Delta U(x) |\phi(x)\rangle=-J(x_m-x_n)`
+
+We get:
+
+.. math:: -\sum_n J(x_m-x_n) a_n=(E-E_0) a_m
+
+Because of the Tranformation symmetry of the Hamiltonian, the resulting
+wavefunction :math:`\psi(x)` should take Bloch form, which means we
+should have the solution :math:`a_m=e^{ikx_m}`, then, we get
+
+.. math::  E-E_0=-\sum_n J(x_n)e^{-ikx_n}
+
+Consider only the nearest-hopping interaction, define
+:math:`J_0=J(0), J=J(\pm a)`, then we have:
+
+.. math::
+
+   E-E_0+J_0=&-J(e^{ika}+e^{-ika}) \\
+   =&-2Jcoska
+
+Second quantization
+-------------------
+
+In the second quantization language, the expectation value of energy
+becomes a operator, set :math:`\mathscr{H}=\frac{p^2}{2m}+U(x)`, we have
+
+.. math:: H=\langle \psi|\mathscr{H}|\psi \rangle \Rightarrow \hat{H}=\sum_{m,n}\hat{c}_m^\dagger H_{mn}\hat{c}_n
+
+with
+:math:`\psi \to \hat{\psi}=\sum\limits_n \hat{c}_n \phi_n, H_{mn}=\langle \phi|\mathscr{H}|\phi \rangle`
+:math:`\phi_n` is a orthonormal and complete basis in *Hilbert space*,
+like plane-waves :math:`e^{ikx}` or energy eigen-states of :math:`H_0`,
+:math:`\mathscr{H}` is the energy operator in single particle first
+quantization picture, which can only act on Hilbert space, while the
+second quantization energy operator :math:`\hat{H}` acts on *Fock
+space*. Here, in tight-binding method, :math:`\phi_n` is the
+wave-function of site :math:`n` of the energy eigen-state :math:`H_0`.
+
+--------------
+
+Consider only the nearest interaction, we have:
+
+.. math::  \hat{H}=\sum_{n=1}^M \hat{c}_n^\dagger \hat{c}_{n+1}t_n+h.c.
+
+:math:`h.c.` means hermitian conjugation. Rewrite it in matrix form:
+:math:`\hat{H}=\sum\limits_{mn}\hat{c}_m \tilde{H}_{mn}c_n`, we have
+
+.. math::
+
+   \tilde{H}_{mn}=\begin{pmatrix} 0 & t_1 &0 & \cdots&t_M^*\\
+   t_1^* &0&t_2&\cdots&0\\
+   0&t_2^*&0&\cdots&0\\
+   \vdots&\vdots&\vdots&\vdots&\vdots\\
+   t_M&0&0&t_{M-1}^*&0
+   \end{pmatrix}
+
+In the case when :math:`t=t_n`, :math:`\hat{c}_n` satisfy the Bloch
+condition, we can transform it into momentum space, with
+:math:`\hat{c}_n=\frac{1}{\sqrt{M}}\sum\limits_k \hat{c}_k e^{ikx_n}`,
+
+--------------
+
+we can easily get
+
+.. math:: \hat{H}=\sum\limits_k \hat{c}_k^\dagger \hat{c}_k(te^{ika}+t^*e^{-ika})=\sum\limits_k \hat{c}_k^\dagger \hat{c}_k E(k)
+
+which gives us the dispersion relation:
+
+.. math::
+
+   E(k)=&te^{ika}+t^*e^{-ika}\\
+   =&2tcoska \qquad \textit{for t is real}
+
+
+On the other hand, keep in mind that we would get
+:math:`c_n=e^{ik(n-1)a}c_1`, that is
+
+.. math::
+
+   \hat{H}=\begin{pmatrix}c_1^\dagger&c_2^\dagger&\cdots&c_M^\dagger \end{pmatrix}
+   \begin{pmatrix} 0 & t &0 & \cdots&t^*\\
+   t^* &0&t&\cdots&0\\
+   0&t^*&0&\cdots&0\\
+   \vdots&\vdots&\vdots&\vdots&\vdots\\
+   t&0&0&t^*&0
+   \end{pmatrix}
+   \begin{pmatrix}c_1\\c_2\\\vdots\\c_M\end{pmatrix}
+
+--------------
+
+.. math::
+
+   \Rightarrow &\begin{pmatrix}c_1^\dagger&c_1^\dagger e^{-ika}&\cdots&c_1^\dagger e^{-ik(M-1)a} \end{pmatrix}
+   \begin{pmatrix} 0 & t &0 & \cdots&t^*\\
+   t^* &0&t&\cdots&0\\
+   0&t^*&0&\cdots&0\\
+   \vdots&\vdots&\vdots&\vdots&\vdots\\
+   t&0&0&t^*&0
+   \end{pmatrix}
+   \begin{pmatrix}c_1\\c_1 e^{ika}\\\vdots\\c_1e^{ik(M-1)a}\end{pmatrix}\\
+   =&\begin{pmatrix}c_1^\dagger&\cdots&c_1^\dagger \end{pmatrix}
+   \begin{pmatrix} te^{ika}+t^*e^{-ika} & 0&0\\
+   0&\ddots&0\\
+   0&0&te^{ika}+t^*e^{-ika}
+   \end{pmatrix}
+   \begin{pmatrix}c_1\\\vdots\\c_1\end{pmatrix}
+
+
+which also gives us :math:`E(k)=te^{ika}+t^*e^{-ika}`.
+
+--------------
+
+More generally, :math:`t_n` can be different from each other, for
+example, if they are all different up to :math:`4`, but have a
+super-periodicity with :math:`t_{5}=t_1`, then there will have 4
+sub-bands, in the example we will consider below, we have two :math:`t`,
+:math:`t_1\neq t_2`, and we have two sub-bands.
+
+If each atom have a valance electron, then the above mentioned energy
+band structure :math:`E(k)=2tcoska` is not the stable fundamental mode,
+it will dimerizes to lower the total energy, that means we'll get
+following coupling case: 
+
+.. figure:: images/1/2.jpg
+   :width: 70%
+   :align: center
+
+with the Hamiltonian:
+
+.. math::  H=\sum_{n=1}^N(v_n c_{n,1}^\dagger c_{n,2}+w_nc_{n,2}^\dagger c_{n+1,1}+h.c.)
+
+with :math:`M=2N`.
+
+Review
+------
+
+In 1-d atom chain, we have got the Hamiltonian in second-quantization
+frame as:
+
+.. math::  \hat{H}=\sum_{n=1}^M \hat{c}_n^\dagger \hat{c}_{n+1}t_n+h.c.
+
+:math:`h.c.` means hermitian conjugation. Rewrite it in matrix form:
+:math:`\hat{H}=\sum\limits_{mn}\hat{c}_m {H}_{mn}\hat{c}_n`, we have
+
+.. math::
+
+   \hat{H}=\begin{pmatrix}c_1^\dagger&c_2^\dagger&\cdots&c_M^\dagger \end{pmatrix}\begin{pmatrix} 0 & t_1 &0 & \cdots&t_M^*\\
+   t_1^* &0&t_2&\cdots&0\\
+   0&t_2^*&0&\cdots&0\\
+   \vdots&\vdots&\vdots&\vdots&\vdots\\
+   t_M&0&0&t_{M-1}^*&0
+   \end{pmatrix}\begin{pmatrix}c_1\\c_2\\\vdots\\c_M\end{pmatrix}
+
+Energy band and topology
+----------------
+.. math::
+
+   \hat{H}=\begin{pmatrix}c_1^\dagger&c_2^\dagger&\cdots&c_M^\dagger \end{pmatrix}\begin{pmatrix} 0 & t_1 &0 & \cdots&t_M^*\\
+   t_1^* &0&t_2&\cdots&0\\
+   0&t_2^*&0&\cdots&0\\
+   \vdots&\vdots&\vdots&\vdots&\vdots\\
+   t_M&0&0&t_{M-1}^*&0
+   \end{pmatrix}\begin{pmatrix}c_1\\c_2\\\vdots\\c_M\end{pmatrix}
+
+:math:`t_n` can differ from each other.
+
+#. For a open chain with :math:`M` atoms, we have :math:`t_M=0`, and
+   this matrix will give us :math:`M` eigen-values and eigen-functions.
+
+#. Possess translational invariance with :math:`c_{n+1}=c_1e^{ikna}`, it
+   will be diagonalized with :math:`H(k)=te^{ika}+t^*e^{-ika}`.
+
+#. Staggered hopping parameters with :math:`t_1\neq t_2`, but have
+   property :math:`c_{2n+1}=c_1e^{iknb},c_{2n+2}=c_2e^{iknb}`. We can
+   block the Hamiltonian up in :math:`2\times 2` blocks and also pair up
+   :math:`c_{2n+1},c_{2n+2}`.
+
+--------------
+
+The Hamiltonian:
+
+.. math::  H=\sum_{n=1}^N(v_n c_{n,1}^\dagger c_{n,2}+w_nc_{n,2}^\dagger c_{n+1,1}+h.c.)
+
+with :math:`M=2N`. 
+
+.. figure:: images/1/2.jpg
+   :width: 70%
+   :align: center
+
+For a more beautiful notation, define
+:math:`\mathbf{c}_n^\dagger=(c_{n,1}^\dagger,c_{n,2}^\dagger)=(c_{2n-1}^\dagger,c_{2n}^\dagger)`,
+then we have
+
+.. math:: H=\sum_{m,n=1}^N \mathbf{c}_m^\dagger H_{mn}\mathbf{c}_n
+
+with
+
+.. math::
+
+   \mathbf{c}_n^\dagger H_{nn}\mathbf{c}_n=\begin{pmatrix}c_{n,1}^\dagger&c_{n,2}^\dagger\end{pmatrix}\begin{pmatrix}0&v_n\\v_n^*&0\end{pmatrix}\begin{pmatrix}c_{n,1}\\c_{n,2}\end{pmatrix}=\begin{pmatrix}c_{n,1}^\dagger&c_{n,2}^\dagger\end{pmatrix}U_n\begin{pmatrix}c_{n,1}\\c_{n,2}\end{pmatrix}
+
+--------------
+
+and
+
+.. math::
+
+   \mathbf{c}_n^\dagger H_{nn+1}\mathbf{c}_{n+1}=\begin{pmatrix}c_{n,1}^\dagger&c_{n,2}^\dagger\end{pmatrix}\begin{pmatrix}0&0\\w_n&0\end{pmatrix}\begin{pmatrix}c_{n+1,1}\\c_{n+1,2}\end{pmatrix}=\begin{pmatrix}c_{n,1}^\dagger&c_{n,2}^\dagger\end{pmatrix}T_n\begin{pmatrix}c_{n+1,1}\\c_{n+1,2}\end{pmatrix}
+
+.. math::
+
+   \mathbf{c}_{n+1}^\dagger H_{n+1n}\mathbf{c}_{n}=\begin{pmatrix}c_{n+1,1}^\dagger&c_{n+1,2}^\dagger\end{pmatrix}T_n^\dagger\begin{pmatrix}c_{n,1}\\c_{n,2}\end{pmatrix}
+
+when :math:`|m-n|>1`, we have :math:`H_{mn}=0`.
+
+For example, for 6 cells (12 sites), we have
+
+.. math::
+
+   H=\begin{pmatrix}U_1&T_1&0&\cdots&T_6^\dagger\\
+   T_1^\dagger&U_2&T_2&\cdots&0\\
+   0&T_2^\dagger&U_3&\cdots&0\\
+   \vdots&\vdots&\vdots&\vdots&\vdots\\
+   T_6&0&0&\cdots&U_6
+   \end{pmatrix}
+
+--------------
+
+.. math::
+
+   H_{mn}=\begin{pmatrix}U_1&T_1&0&\cdots&T_6^\dagger\\
+   T_1^\dagger&U_2&T_2&\cdots&0\\
+   0&T_2^\dagger&U_3&\cdots&0\\
+   \vdots&\vdots&\vdots&\vdots&\vdots\\
+   T_6&0&0&\cdots&U_6
+   \end{pmatrix}
+
+-  Open chain: :math:`T_6=0`.
+-  Closed chain with translational symmetry, :math:`T_n=T,U_n=U`, with
+
+   .. math:: U=\begin{pmatrix}0&v\\v^*&0\end{pmatrix},T=\begin{pmatrix}0&0\\w&0\end{pmatrix}
+
+   Using three Pauli matrices
+
+   .. math:: \sigma_x=\begin{pmatrix}0&1\\1&0\end{pmatrix},\sigma_y=\begin{pmatrix}0&-i\\i&0\end{pmatrix},\sigma_z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+
+--------------
+
+We get
+
+.. math:: U=Re(v)\sigma_x-Im(v)\sigma_y,T=\frac{1}{2}w(\sigma_x-i\sigma_y)
+
+Using :math:`\mathbf{c}_n=e^{ik(n-1)b}\mathbf{c}_1`, we have
+
+.. math::
+
+   \hat{H}=\begin{pmatrix}\mathbf{c}_1^\dagger&\mathbf{c}_2^\dagger&\cdots&\mathbf{c}_N^\dagger \end{pmatrix}
+   \begin{pmatrix} U & T &0 & \cdots&T^\dagger\\
+   T^\dagger &U&T&\cdots&0\\
+   0&T^\dagger&U&\cdots&0\\
+   \vdots&\vdots&\vdots&\vdots&\vdots\\
+   T&0&0&T^\dagger&U
+   \end{pmatrix}
+   \begin{pmatrix}\mathbf{c}_1\\\mathbf{c}_2\\\vdots\\\mathbf{c}_N\end{pmatrix}
+
+.. math::
+
+
+   \Rightarrow \begin{pmatrix}\mathbf{c}_1^\dagger&\mathbf{c}_1^\dagger e^{-ikb}&\cdots&\mathbf{c}_1^\dagger e^{-ik(N-1)b} \end{pmatrix}
+   \begin{pmatrix} U & T &0 & \cdots&T^\dagger\\
+   T^\dagger &U&T&\cdots&0\\
+   0&T^\dagger&U&\cdots&0\\
+   \vdots&\vdots&\vdots&\vdots&\vdots\\
+   T&0&0&T^\dagger&U
+   \end{pmatrix}
+   \begin{pmatrix}\mathbf{c}_1\\\mathbf{c}_1 e^{ikb}\\\vdots\\\mathbf{c}_1e^{ik(N-1)b}\end{pmatrix}
+
+--------------
+
+.. math::
+
+
+   =\begin{pmatrix}\mathbf{c}_1^\dagger&\cdots&\mathbf{c}_1^\dagger \end{pmatrix}
+   \begin{pmatrix} U+Te^{ikb}+T^\dagger e^{-ikb} & &\\
+   &\ddots&\\
+   &&U+Te^{ikb}+T^\dagger e^{-ikb}
+   \end{pmatrix}
+   \begin{pmatrix}\mathbf{c}_1\\\vdots\\\mathbf{c}_1\end{pmatrix}
+
+which gives us
+:math:`H=H(k)\oplus H(k)\cdots \oplus H(k)=\oplus_{n=1}^N H(k)` with
+
+.. math:: H(k)=U+Te^{ikb}+T^\dagger e^{-ikb}=\mathbf{h}(k)\cdot \mathbf{\sigma}
+
+with
+
+.. math::
+   h_x(k)=&Re(v)+|w|cos(kb+arg(w))\\
+   h_y(k)=&-Im(v)+|w|sin(kb+arg(w))\\
+   h_z(k)=&0
+
+
+with :math:`w=|w|e^{i arg(w)}`.
+
+--------------
+
+.. math:: H(k)=\mathbf{h}(k)\cdot \mathbf{\sigma}
+
+with
+
+.. math:
+   h_x(k)=&Re(v)+|w|cos(kb+arg(w))\\
+   h_y(k)=&-Im(v)+|w|sin(kb+arg(w))\\
+   h_z(k)=&0
+
+with eigen-energy
+
+.. math:: E(k)=|\mathbf(h)(k)=\pm \sqrt{h_x^2+h_y^2+h_z^2}=\pm \sqrt{|v|^2+|w|^2+2|v||w|cos(kb+arg(v)+arg(w))}
+
+and eigen-wavefunctions
+
+.. math::
+
+   |\pm\rangle=\begin{pmatrix}\pm e^{-i\phi(k)}\\
+   1\end{pmatrix}
+
+with :math:`tan\phi=h_y/h_x`.
+
+--------------
+
+For example, set :math:`arg(v)=arg(w)=0`, we have 
+
+.. figure:: images/1/energy.png
+   :width: 70%
+   :align: center
+
+Can not tell the difference :math:`|v|-|w|=\pm\delta`.
+
+--------------
+
+Energy-band description is not completed, it can give us many
+information, but not the whole, others are hidden in the wave-function.
+Alternatively, recalling :math:`H(k)=\mathbf{h}(k)\cdot \mathbf{\sigma}`, the
+Hamiltonian should contain the whole information, but we have only used
+:math:`|h|`, in topological aspect, :math:`\mathbf{h}(k)` will suffices.
+
+Set :math:`arg(v)=0`,\ :math:`kb=[0,2\pi]`, we have two cases
+
+-  :math:`|w|<|v|, \mathbf{inter}<\mathbf{intra}`
+-  :math:`|w|>|v|, \mathbf{inter}>\mathbf{intra}`
+
+--------------
+
+.. figure:: images/1/two.png
+   :alt: two cases
+   :width: 90%
+   :align: center
+
+   two cases
+Winding number
+--------------
+
+:math:`H(k)=\mathbf{h}(k)\cdot \mathbf{\sigma}`, :math:`\mathbf{h}(k)=0` is a
+degenerate point with :math:`|v|=|w|`, two bands cross, define
+:math:`h(k)=h_x(k)+ih_y(k)`, we have
+
+.. math:: H(k)=\begin{pmatrix}0&h^*(k)\\h(k)&0\end{pmatrix}
+
+.. math:: ln(h)=ln(|h|)e^{iarg(h)}=ln(|h|)+iarg(h)
+
+define
+
+.. math:: \nu=\frac{1}{2\pi i}\int_{-\pi}^{\pi}dk\frac{d}{dk}ln(h(k))
+
+When
+
+-  :math:`|w|>|v|, \nu=1, \mathbf{inter}>\mathbf{intra}`
+-  :math:`|w|<|v|, \nu=0, \mathbf{inter}<\mathbf{intra}`
+
+--------------
+
+A example, :math:`N=20, M=2N=40, w=1, v=0.5`, we get eigen-energys:
+
+.. figure:: images/1/4.png
+   :alt: eigen-energy
+   :width: 70%
+   :align: center
+
+
+   eigen-energy
+
+--------------
+
+.. figure:: images/1/a-.png
+   :width: 55%
+   :align: center
+.. figure:: images/1/a+.png
+   :width: 55%
+   :align: center
+   
+.. figure:: images/1/b-.png
+   :width: 55%
+   :align: center
+
+.. figure:: images/1/b+.png
+   :width: 55%
+   :align: center
+
+--------------
+
+Edge-states: 
+
+.. figure:: images/1/c1.png
+   :width: 55%
+   :align: center
+
+.. figure:: images/1/c2.png
+   :width: 55%
+   :align: center
+
+Chiral symmetry
+---------------
+.. figure:: images/1/2.jpg
+   :width: 70%
+   :align: center 
+
+Recalling the Hamiltonian:
+
+.. math:: H=\sum_{n=1}^N(v_n c_{n,1}^\dagger c_{n,2}+w_nc_{n,2}^\dagger c_{n+1,1}+h.c.)
+
+Define projector operators:
+
+.. math:: P_A=\sum_n c_{n,1}^\dagger c_{n,1}, P_B=\sum_n c_{n,2}^\dagger c_{n,2}
+
+and the chiral operator :math:`\Sigma_z=P_A-P_B`, The matrix elements
+of :math:`\Sigma_z` vanish,
+:math:`\langle 0|c_r \Sigma c^\dagger_s|0\rangle=0` if sites :math:`r`
+and :math:`s` are in different unit cells.
+
+--------------
+
+In first-quantization, we have
+
+.. math:: H=\sum_{n=1}^N(v_n |n,1\rangle\langle n,2|+w_n|n,2\rangle\langle n+1,1|+h.c.)
+
+and
+
+.. math:: P_A=\sum_n |n,1\rangle\langle n,1|, P_B=\sum_n |n,2\rangle\langle n,2|
+
+In matrix form, we have
+
+.. math:: \Sigma_z=\sigma_z\oplus\sigma_z\oplus\cdots\oplus\sigma=\oplus_{n=1}^N \sigma_z
+
+:math:`\Sigma_z` is *local*, it does not mix site between unit cells,
+and inherits the algebra from :math:`\sigma_z`:
+
+.. math:: \Sigma_z^\dagger\Sigma_z=1
+
+.. math:: \Sigma_z^2=1
+
+--------------
+
+Recalling
+
+.. math::
+
+   \begin{pmatrix} U_1 & T_1 &0 & \cdots&T_N^\dagger\\
+   T_1^\dagger &U_2&T_2&\cdots&0\\
+   0&T_2^\dagger&U_3&\cdots&0\\
+   \vdots&\vdots&\vdots&\vdots&\vdots\\
+   T_N&0&0&T_{N-1}^\dagger&U_N
+   \end{pmatrix}
+
+There are no **onsite terms** in the Hamiltonian, so we have
+
+.. math:: \Sigma_z H \Sigma_z=-H
+
+This is the chiral symmetry.
+
+.. Note::
+   Actually, here, :math:`H` is defined in momentum space, but
+   :math:`\Sigma_z` in real space, we should write
+   :math:`\tilde{H}=U^\dagger H U` for some unitary matrix :math:`U`, but
+   the property survives!
+
+--------------
+
+Consequences: For eigenstates :math:`|\psi_n\rangle` of :math:`H`, we
+have
+
+.. math:: H|\psi_n\rangle=E_n|\psi_n\rangle
+
+.. math:: H\Sigma_z|\psi_n\rangle=-\Sigma_zH|\psi_n\rangle=-\Sigma_zE_n|\psi_n\rangle=-E_n\Sigma_z|\psi_n\rangle
+
+ If
+
+-  :math:`E_n\neq 0`, two orthonormal states
+   :math:`|\psi_n\rangle, \Sigma_z|\psi_n\rangle`, which gives
+
+   .. math:: \begin{pmatrix}\alpha^* &\beta^*\end{pmatrix}\begin{pmatrix}\alpha\\-\beta\end{pmatrix}=0
+
+   .. math:: \Rightarrow |\alpha|^2=|\beta|^2
+
+-  :math:`E_n=0`, we particularly have :math:`\Sigma_z=\Sigma_zH`,
+   :math:`|\psi_n\rangle` can be eigen-states of :math:`H` and
+   :math:`\Sigma` simultaneously,
+   :math:`\Sigma_z|\psi_n\rangle=\pm|\psi_n\rangle`, gives
+   :math:`|\psi_n\rangle=\begin{pmatrix}1 \\0\end{pmatrix}` or
+   :math:`|\psi_n\rangle=\begin{pmatrix}0 \\1\end{pmatrix}`
+
+Review 2
+--------
+
+In the last class, we have solved 1-d atom chain with staggered hopping
+parameters and got the Hamiltonian:
+
+.. math::
+
+   H(k)=\mathbf{h}(k)\cdot \mathbf{\sigma}=\begin{pmatrix}0&h_x-ih_y\\h_x+ih_y&0\end{pmatrix}=|h(k)|\begin{pmatrix}0&e^{-i\phi(k)}\\e^{i\phi(k)}&0\end{pmatrix}
+
+with :math:`tan\phi=h_y/h_x`.
+
+Eigen-values are :math:`E(k)=\pm|h(k)|`, with eigen-functions:
+:math:`|\pm\rangle=\begin{pmatrix}\pm e^{-i\phi(k)}\\ 1\end{pmatrix}`.
+
+--------------
+
+:math:`\mathbf{h}(k)` depicted as follow:
+
+.. figure:: images/1/two.png
+   :alt: Topological transition
+   :width: 90%
+   :align: center
+
+   Topological transition
+Topological transition
+----------------------
+
+We have already seen, for :math:`|w|>|v|` or :math:`|w|<|v|`, we got
+different **winding number**, means there is a topological transition at
+:math:`|w|=|v|`. In the energy-band point of view, it means the gap
+between two energy bands closes (across each other) and reopens. There
+are two ways to change the winding number and get a topological
+transition:
+
+1. Pull the path through the origin in the :math:`h_x-h_y` plane.
+2. Lift it out of the plane (breaking the chiral symmetry).
+
+--------------
+
+Case 1(a): :math:`v=0.5, w=0\to 1`
+
+.. figure:: images/1/a.jpg
+   :width: 70%
+   :align: center
+
+.. figure:: images/1/figure_1a.png
+   :width: 70%
+   :align: center
+
+--------------
+
+Case 1(b): :math:`w=1, v=2.5\to 0`
+
+.. figure:: images/1/c.jpg
+   :width: 70%
+   :align: center
+
+.. figure:: images/1/figure_3.png
+   :width: 70%
+   :align: center
+
+
+--------------
+
+Case 2: Sublattice potential :math:`H_{sublattice}=u\sigma_z`. Recalling
+
+.. math:: H(k)=U+Te^{ikb}+T^\dagger e^{-ikb}
+
+with
+:math:`U=\begin{pmatrix}0&v\\v^*&0\end{pmatrix},U=\begin{pmatrix}0&0\\w&0\end{pmatrix}`,
+now :math:`U` changes to
+:math:`U=\begin{pmatrix}u&v\\v^*&-u\end{pmatrix}`, and
+:math:`H(k)=\mathbf{h}(k)\cdot\mathbf{\sigma}` with :math:`h_z(k)=u`.
+
+Set :math:`w=1, v=1.5-cos\theta, u=sin\theta, \theta=0\to \pi`,
+
+.. figure:: images/1/b.jpg
+   :width: 70%
+   :align: center
+
+.. figure:: images/1/figure_2.png
+   :width: 70%
+   :align: center
+
+-------------
+
+Case 3: Charge Pump: Using the Hamiltonian
+:math:`H=u(t)\sum\limits_{i=1}^N(-1)^{i-1}c_i^{\dagger}c_i+\sum\limits_{i=1}^N[t_0+\delta(t)(-1)^i](c_i^{\dagger}c_{i+1}+h.c.)`,
+with :math:`u(t)=u_0 sin\theta, \delta(t)=\delta_0 cos\theta`, add time
+variation with :math:`\theta=2\pi t/T`, in previous notation,
+:math:`v=t_0-\delta(t), w=t_0+\delta(t)`. set
+:math:`u=sin\theta, v=0.75-0.25cos\theta, w=0.75+0.25cos\theta`, the
+vector :math:`\vec{h(k)}` is
+
+.. figure:: images/1/5a.png
+   :width: 50%
+   :align: center
+.. figure:: images/1/5b.png
+   :width: 50%
+   :align: center
+.. figure:: images/1/5c.png
+   :width: 50%
+   :align: center
+.. figure:: images/1/5d.png
+   :width: 50%
+   :align: center
+
+--------------
+
+The energy band evolution is
+
+.. figure:: images/1/figure_4.png
+   :alt: energy4
+   :width: 70%
+   :align: center
+
+   energy4
+
+.. figure:: images/1/1a.png
+   :width: 50%
+   :align: center
+.. figure:: images/1/2a.png
+   :width: 50%
+   :align: center
+
+Winding number v.s. Zak phase
+-----------------------------
+
+From
+
+.. math:: H(k)=\begin{pmatrix}0&h^*(k)\\h(k)&0\end{pmatrix}
+
+.. math:: ln(h)=ln(|h|)e^{iarg(h)}=ln(|h|)+iarg(h)
+
+We have defined the winding number
+
+.. math:: \nu=\frac{1}{2\pi i}\int_{-\pi}^{\pi}dk\frac{d}{dk}ln(h(k))=\frac{1}{2\pi}arg(h)\left.\right|_{-\pi}^{\pi}=1 \ \textit{or}\  0
+
+From the Zak phase definition:
+
+.. math:: \gamma=i\oint\langle\psi|\nabla_k|\psi\rangle
+
+Recalling
+:math:`|\psi\rangle=\frac{1}{\sqrt{2}}\begin{pmatrix}\pm e^{-i\phi(k)}\\ 1\end{pmatrix}\Rightarrow\gamma=\frac{1}{{2}}\oint dk\nabla_k\phi=\pm\pi \ \textit{or}\  0`.
+

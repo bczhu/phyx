@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Lecture 3 : Chern Insulator &mdash; Physics 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Physics 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Lecture notes" href="main.html"/>
+        <link rel="next" title="Berry’s Phase" href="../Berry&#39;s Phase/main.html"/>
+        <link rel="prev" title="Lecture 2 : Berry Phase and Chern number" href="2.html"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42580598-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8a3e22ee1e151444cc6469d69651f3eb' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../../index.html" class="fa fa-home"> Physics</a>
+        
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CM/Lagrangian.html">Phase space Lagrangian</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CM/Lagrangian.html#regular-derivation">Regular derivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CM/Lagrangian.html#dynamic-system">Dynamic system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CM/Lagrangian.html#id4">Phase space Lagrangian</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="main.html">Lecture notes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">Lecture 1 : 1-d SSH model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">Lecture 2 : Berry Phase and Chern number</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Lecture 3 : Chern Insulator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Berry's Phase/main.html">Berry&#8217;s Phase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Berry's Phase/Preliminary.html">Preliminary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Berry's Phase/main.html#some-topics">some topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Weyl_semi-metal.html">Weyl Semi-metal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Weyl_semi-metal.html#graphene">Graphene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Weyl_semi-metal.html#three-dimension-weyl-semi-metal-and-chern-number">Three dimension: Weyl semi-metal and Chern number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Weyl_semi-metal.html#bulk-boundary-corresponding">Bulk-boundary corresponding</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CMP/linear response theory/main.html">Linear response theory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CMP/linear response theory/Kubo_formula.html">Kubo formula</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../CMP/Fermi's_Golden_rule.html">Fermi&#8217;s Golden rule</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Python/note.html">Python 学习</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Physics</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="main.html">Lecture notes</a> &raquo;</li>
+      
+    <li>Lecture 3 : Chern Insulator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/TI/Lecture notes/3.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="lecture-3-chern-insulator">
+<h1>Lecture 3 : Chern Insulator<a class="headerlink" href="#lecture-3-chern-insulator" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="menu">
+<h2>Menu<a class="headerlink" href="#menu" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Quantum Hall Insulator</li>
+<li>Half BHZ model<ul>
+<li>Chern number using <span class="math">\(\mathbf{h}\)</span></li>
+<li>Chern number as a Skyrmion number</li>
+<li>Low-energy Hamiltonian</li>
+<li>Chern number as an obstruction</li>
+</ul>
+</li>
+<li>Haldane model</li>
+</ul>
+</div>
+<div class="section" id="quantum-hall-insulator">
+<h2>Quantum Hall Insulator<a class="headerlink" href="#quantum-hall-insulator" title="Permalink to this headline">¶</a></h2>
+<p>The first Topological Insulator is shown in Integer quantum Hall effect.
+For 2D electron gas (2DEG), by applying a B field perpendicular to the
+2D plane, we get plateaus of Hall conductance
+<span class="math">\(\sigma_{xy}=1/\rho_{xy}\)</span> which is quantized in <span class="math">\(\nu e^2/h\)</span>.
+In the same time, <span class="math">\(\rho_{xx}=\sigma_{xx}=0\)</span> (which may seems
+counterintuitive, but noticing the tensor nature of <span class="math">\(\rho\)</span> and
+<span class="math">\(\sigma\)</span>). The quantization of <span class="math">\(\sigma_{xy}\)</span> is very
+accurate, it is the second best way to measure the fine structure
+constant, and it is inert to interactions and impurities. For a charge
+neutral particle in 2D:</p>
+<div class="math">
+\[i\partial_t\psi(x,y)=H_0\psi(x,y)\]</div>
+<p>with <span class="math">\(H_0=\frac{\hat{p}^2}{2m}\)</span>.</p>
+<p>In a magnetic field with a vector potential <span class="math">\(\vec{A}\)</span>, we have
+<span class="math">\(H=\frac{(\hat{p}-e\vec{A})^2}{2m}\)</span>.</p>
+<hr class="docutils" />
+<p>For a constant uniform magnetic field, choose <em>Landau gauge</em>:
+<span class="math">\(A_x=0, A_y=Bx\)</span>, we have</p>
+<div class="math">
+\[H=\frac{\hbar^2}{2m}(-i\partial_x)^2+\frac{\hbar^2}{2m}(-i\partial_y-eBx)^2\]</div>
+<p><span class="math">\(H\)</span> is invariant under translations along the y axis, so
+<span class="math">\([p_y,H]=0\)</span>, we can write the eigen states of <span class="math">\(H\)</span>:
+<span class="math">\(\psi=f(x)exp(ik_yy)\)</span> and <span class="math">\(H\psi=\epsilon\psi\)</span>. which gives:</p>
+<div class="math">
+\[\psi_{n,k_y}=\phi_n(x-x_0)exp(ik_yy)\]</div>
+<p><span class="math">\(\phi_n(x)\)</span> satisfies the harmonic oscillator potential
+<span class="math">\(V(x)=\frac{k}{2}x^2\)</span> with
+<span class="math">\(k=e^2B^2/m, x_0=\frac{\hbar k_y}{eB}\)</span>. The eigen energies are the
+famous harmonic one:</p>
+<div class="math">
+\[\epsilon_{n,k_y}=(n+1/2)\hbar \omega_c =(n+1/2)\hbar \sqrt{\frac{k}{m}} =(n+1/2)\frac{eB\hbar}{m}\]</div>
+<hr class="docutils" />
+<p><strong>Some comments</strong></p>
+<ol class="arabic simple">
+<li>Landau levels are highly degenerated, they form energy bands with
+<span class="math">\(n\)</span> denotes band index and <span class="math">\(k_y\)</span> the momentum, all the
+states with the same <span class="math">\(n\)</span> (but different <span class="math">\(k_y\)</span>) have the
+same energy (flat bands).</li>
+<li>The degeneracy of each Landau level is
+<span class="math">\(D=(2S+1)\frac{\Phi}{\Phi_0}\)</span>, where <span class="math">\(S\)</span> denotes spin,
+and <span class="math">\(\Phi_0\)</span> is the magnetic flux quanta with
+<span class="math">\(\Phi_0=h/e\)</span>.</li>
+<li>We can also use <em>symmetry gauge</em>:
+<span class="math">\(A_x=-\frac{By}{2}, A_y=\frac{Bx}{2}\)</span>, though it is more
+cumbersome, the physics is quite insightful. More on symmetry gauge,
+see[1].</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="edge-states-with-quantization-of-the-hall-conductivity">
+<h2>Edge states with Quantization of the Hall conductivity<a class="headerlink" href="#edge-states-with-quantization-of-the-hall-conductivity" title="Permalink to this headline">¶</a></h2>
+<p>Electrons at the edge can move along the edge in one direction, this
+edge states gives quantized Hall conductivity.</p>
+<p>At top edge:
+<span class="math">\(N=\int \frac{dpdr}{2\pi\hbar}=L\int \frac{dp}{2\pi\hbar}\)</span>, we get</p>
+<div class="math">
+\[n=\frac{N}{L}=\int\frac{dp}{2\pi\hbar}\]</div>
+<div class="math">
+\[\delta n_{top}=\int_{k_F}^{k_{Ftop}}\frac{dp}{2\pi\hbar}=\frac{k_{Ftop}-k_F}{2\pi\hbar}=\frac{\mu_{top}-\mu}{2\pi\hbar v_{Ftop}}\]</div>
+<p>We have use the relation
+<span class="math">\(v_F=\frac{\partial E(k)}{\hbar \partial k}=\frac{\mu_{top}-\mu}{\hbar(k_{Ftop}-k_F)}\)</span></p>
+<p>Net current for top edge:</p>
+<div class="math">
+\[I_{top}=ev_{Ftop}\delta_{top}=ev_{Ftop}\frac{\mu_{top}-\mu}{2\pi\hbar v_{Ftop}}=e\frac{eV/2}{h}=\frac{e^2}{h}\frac{V}{2}\]</div>
+<hr class="docutils" />
+<p>We have used <span class="math">\(\mu_1-\mu_2=e(V_1-V_2)\)</span>. And, similarly, we have
+<span class="math">\(I_{bottom}=I_{top}\)</span>, that gives</p>
+<div class="math">
+\[I=\frac{e^2}{h}V\]</div>
+<div class="math">
+\[\sigma=j/E=\frac{I}{L_y}/\frac{V}{L_y}=I/V=\frac{e^2}{h}\]</div>
+<p>If one has <span class="math">\(n\)</span> copies of edge states, then total Hall
+conductivity is:</p>
+<div class="math">
+\[\sigma=n\frac{e^2}{h}\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="half-bhz-model">
+<h2>Half BHZ model<a class="headerlink" href="#half-bhz-model" title="Permalink to this headline">¶</a></h2>
+<p>See the lattice below: <img alt="Half-BHZ" src="../../_images/11.jpg" /> Consider at each site, there are two
+orbital modes coupled together, in the tight-binding approximation, we
+can write the Hamiltonian:</p>
+<div class="math">
+\[H=\sum_{n_x,n_y}c^{\dagger}_{n_x,n_y}\frac{U(n)}{2}c_{n_x,n_y}+c^{\dagger}_{n_x+1,n_y}T^{\dagger}_x(n)c_{n_x,n_y}+c^{\dagger}_{n_x,n_y+1}T^{\dagger}_y(n)c_{n_x,n_y}+\textit{h.c.}\]</div>
+<hr class="docutils" />
+<p>Assuming translational invariance along x and y, i.e.
+<span class="math">\(U(n)=U,T_x(n)=T_x,T_y(n)=T_y\)</span>, after Fourier transform:
+<span class="math">\(c_{n_x,n_y}=\frac{1}{\sqrt{N}}\sum_{k_x,k_y}c_{k_x,k_y}e^{ik_xn_x+ik_yn_y}\)</span>
+with <span class="math">\(N=N_xN_y, k_xN_x=2\pi m_1,k_yN_y=2\pi m_2\)</span>, we get</p>
+<div class="math">
+\[H=\sum_{k_x,k_y}c^{\dagger}_{k_x,k_y}H(k)c_{k_x,k_y}\]</div>
+<p>with</p>
+<div class="math">
+\[H(k)=\frac{1}{2}U+T_xe^{ik_x}+T_ye^{ik_y}+\textit{h.c.}\]\[with\]</div>
+<p><span class="math">\(U=\Delta\sigma_z, T_x=\frac{1}{2}\sigma_z-\frac{iA}{2}\sigma_x, T_y=\frac{1}{2}\sigma_z-\frac{iA}{2}\sigma_y\)</span>,
+we get</p>
+<div class="math">
+\[H(k)=(\Delta+cosk_x+cosk_y)\sigma_z+A(sink_x\sigma_x+sink_y\sigma_y)\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="chern-number-using">
+<h2>Chern number using <span class="math">\(\mathbf{h}\)</span><a class="headerlink" href="#chern-number-using" title="Permalink to this headline">¶</a></h2>
+<p>Written the Hamiltonian as: <span class="math">\(H(k)=\mathbf{h}\cdot\mathbf{\sigma}\)</span>, we get</p>
+<div class="math">
+\[\begin{split}\mathbf{h}(k_x,k_y)=\begin{pmatrix}Asink_x\\Asink_y\\\Delta+cosk_x+cosk_y\end{pmatrix}\end{split}\]</div>
+<p>and we get the eigen-energies:</p>
+<div class="math">
+\[E_{\pm}(k_x,k_y)=\pm |\mathbf{h}(k_x,k_y)|=\pm\sqrt{A^2(sin^2k_x+sin^2k_y)+(\Delta+cosk_x+cosk_y)^2}\]</div>
+<p>Set <span class="math">\(A=1\)</span>, for some special parameter <span class="math">\(\Delta\)</span>, the
+dispersion relation shows below: <img alt="dispersion1" src="../../_images/figure_31.png" /> <img alt="dispersion2" src="../../_images/figure_41.png" />
+<img alt="dispersion3" src="../../_images/figure_21.png" /> <img alt="dispersion4" src="../../_images/figure_1.png" /></p>
+<hr class="docutils" />
+<p>From the dispersions also the analysis we can see that Dirac cone
+appears at
+<span class="math">\(k_x,k_y=0,\Delta=-2; k_x,k_y=0,\pm\pi,\Delta=0; k_x,k_y=\pm\pi,\pm\pi,\Delta=2\)</span>.
+It means that the monopole seats at <span class="math">\(\mathbf{h}=0\)</span>, at each region, we
+can calculate the Chern number of the valence band in investigating how
+many times does the torus formed by the image of the Brillouin zone in
+the space of <span class="math">\(\mathbf{h}\)</span> contail the origin. The Torus for different
+<span class="math">\(\Delta=-2.5,-1,1,2.5\)</span> shown below (for clarity, only half of the
+torus is shown): <img alt="torus1" src="../../_images/-2.5.png" /> <img alt="torus2" src="../../_images/-1.png" /> <img alt="torus3" src="../../_images/13.png" /> <img alt="torus4" src="../../_images/2.5.png" /></p>
+<hr class="docutils" />
+<p>From <span class="math">\(\mathbf{h}\)</span>, we get the Chern number as follow: (Set
+<span class="math">\(A=1\)</span>)</p>
+<ul class="simple">
+<li><span class="math">\(|\Delta|&gt;2, Q=0\)</span></li>
+<li><span class="math">\(-2&lt;\Delta&lt;0, Q=-1\)</span></li>
+<li><span class="math">\(0&lt;\Delta&lt;2, Q=1\)</span></li>
+</ul>
+<p>As long as the whole band is gapped, we have the same topology and the
+same Chern number. In the region <span class="math">\(|\Delta|&gt;2\)</span>, reminding the
+Hamiltonian (In what follows, we always consider <span class="math">\(A=1\)</span>)</p>
+<div class="math">
+\[H(k)=A(sink_x\sigma_x+sink_y\sigma_y)+(\Delta+cosk_x+cosk_y)\sigma_z\]</div>
+<p>It represent Hamiltonians topologically equivalent to the atomic limit,
+the limit in which all hoppings are set to zero, as if the lattice
+constant were infinity. The <span class="math">\(|\Delta|&gt;2\)</span> region is topologically
+the same phase as the phase <span class="math">\(|\Delta|\to\infty\)</span>, which has trivial
+(momentum-independent) eigenstates and zero Chern number.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="chern-number-as-a-skyrmion-number">
+<h2>Chern number as a Skyrmion number<a class="headerlink" href="#chern-number-as-a-skyrmion-number" title="Permalink to this headline">¶</a></h2>
+<p>Looking at the vector <span class="math">\(\mathbf{h}\)</span>, the
+<span class="math">\((h_x(k_x,k_y),h_y(k_x,k_y))\)</span> shows below <img alt="kxy" src="../../_images/11.jpg" /></p>
+<p>To understand the Chern number, we can see if the <span class="math">\(h_z\)</span> component
+change sign or not in the BZ. If it changes sign, it corresponds to a
+skyrmion, and the Chern number is non-zero, it is the same as Skyrmion
+number. If it does not change sign, then the topology is trivial. The
+value of <span class="math">\(h_z(\mathbf{k})\)</span> at high-symmetry points in the BZ are shown
+below: <img alt="skyr" src="../../_images/3.jpg" /> From which we can get the Chern number.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="low-energy-hamiltonian">
+<h2>Low-energy Hamiltonian<a class="headerlink" href="#low-energy-hamiltonian" title="Permalink to this headline">¶</a></h2>
+<p>We can also calculate the Chern number using the low-energy Hamiltonian.
+At <span class="math">\(\Delta=-2\)</span>, the energy gap collapses at the
+<span class="math">\(\Gamma=(0,0)\)</span> point, near this point, we have</p>
+<div class="math">
+\[H_{\Gamma+k}=k_x\sigma_x+k_y\sigma_y+(\Delta+2)\sigma_z\]</div>
+<p>For the Hamiltonian <span class="math">\(H(k)=k_x\sigma_x+k_y\sigma_y+m\sigma_z\)</span>, we
+can get the monopole field for <span class="math">\(E_-\)</span>state is</p>
+<div class="math">
+\[\Omega_{ij}=\frac{1}{2}\hat{\mathbf{h}}\cdot(\partial_i\hat{\mathbf{h}}\times\partial_j\hat{\mathbf{h}})\]</div>
+<p>Then we get</p>
+<div class="math">
+\[\Omega_{ij}=\frac{m}{2(k_x^2+k_y^2+m^2)^{3/2}}\]</div>
+<hr class="docutils" />
+<p>Which gives:</p>
+<div class="math">
+\[C=-\frac{1}{2\pi}\int\Omega_{ij}dk_xdk_y=-\frac{sign(m)}{2}\]</div>
+<p>Alternatively, from
+<span class="math">\(\mathbf{B}=\frac{1}{2}\frac{(k_x,k_y,m)}{(k_x^2+k_y^2+m^2)^{3/2}}\)</span>,</p>
+<div class="math">
+\[C=-\frac{1}{2\pi}\int\mathbf{B}\cdot d\mathbf{\mathcal{S}}\]</div>
+<p>For <span class="math">\(m&gt;0\)</span> and <span class="math">\(m&lt;0\)</span>, the integral region and direction
+shows below:</p>
+<div class="figure" id="id1">
+<img alt="Bfield" src="../../_images/41.jpg" />
+<p class="caption"><span class="caption-text">Bfield</span></p>
+</div>
+<hr class="docutils" />
+<p>Note here the Chern number is not an integer, because we used continuous
+model, and <span class="math">\(k_x,k_y\)</span> can range from <span class="math">\(-\infty\)</span> to
+<span class="math">\(\infty\)</span>, so the band structure <span class="math">\(\pm\sqrt{k_x^2+k_y^2+m^2}\)</span>
+run riot and never turns back, which should give us another half of the
+Chern number (though we have no idea is we should add or subtract
+half-values). But as we can see below, the differences of Chern number
+between two states gives the right answer.</p>
+<p>So from <span class="math">\(\Delta&lt;-2\to \Delta&gt;-2\)</span>, <span class="math">\(m&lt;0\to m&gt;0\)</span>, we get</p>
+<div class="math">
+\[\begin{split}C=-\frac{1}{2}sign(m&gt;0)+\frac{1}{2}sign(m&lt;0)=-1\end{split}\]</div>
+<p>Also we know <span class="math">\(\Delta&lt;-2\)</span>, <span class="math">\(C=0\)</span>, so for <span class="math">\(-2&lt;\Delta&lt;0\)</span>,
+<span class="math">\(C=-1\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="chern-number-as-an-obstruction">
+<h2>Chern number as an obstruction<a class="headerlink" href="#chern-number-as-an-obstruction" title="Permalink to this headline">¶</a></h2>
+<p>Write
+<span class="math">\(\mathbf{h}=|\mathbf{h}|(sin\theta cos\phi, sin\theta sin\phi, cos\theta)\)</span>.
+In principle, for the whole Bloch sphere, we must at least use two
+different bases which are well defined. If for the whole band, we have
+<span class="math">\(h_z&lt;0\)</span> or <span class="math">\(h_z&gt;0A\)</span>, then, we can use one set of eigen base,
+which gives us zero Chern number. But for the region
+<span class="math">\(-2&lt;\Delta&lt;0\)</span>, at the point <span class="math">\(\Gamma\)</span>, we have
+<span class="math">\(h_z(0,0)=\Delta+2&gt;0\)</span>, <span class="math">\(h_z/h=1=cos\theta\)</span>,
+<span class="math">\(\theta=0\)</span>; at the point <span class="math">\((0,\pm\pi)\)</span> or
+<span class="math">\((\pm\pi,\pm\pi)\)</span>, we have <span class="math">\(h_z&lt;0\)</span>, <span class="math">\(\theta=\pi\)</span>,
+means we must use two set of eigen bases, denotes no-zero Chern number.
+The resulting <span class="math">\(\hat{h}=\mathbf{h}/|\mathbf{h}|\)</span> for
+different<span class="math">\(\Delta=-2.5\to 2.5\)</span> shown below:</p>
+<p><img alt="h" src="../../_images/2.5a.png" /> <img alt="h" src="../../_images/2.5a.png" /> <img alt="h" src="../../_images/2.5a.png" /> <img alt="h" src="../../_images/2.5a.png" /></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="haldane-model">
+<h2>Haldane Model<a class="headerlink" href="#haldane-model" title="Permalink to this headline">¶</a></h2>
+<p>Haldane model describe the model of Graphene with real
+nearest-neighbor-hopping parameters but complex
+next-nearest-neighbor-hopping parameters resulting from a nonzero
+magnetic field. But the field is periodic and have zero net flux per
+plaquette. The real space and reciprocal space shows below (with unit
+length 1):</p>
+<div class="figure" id="id2">
+<img alt="lattice" src="../../_images/haldane.png" />
+<p class="caption"><span class="caption-text">lattice</span></p>
+</div>
+<hr class="docutils" />
+<p>The vectors are:</p>
+<div class="math">
+\[\begin{split}\mathbf{a_1}=\begin{pmatrix}\sqrt{3}/2\\1/2\end{pmatrix}, \mathbf{a_2}=\begin{pmatrix}-\sqrt{3}/2\\1/2\end{pmatrix}, \mathbf{a_3}=\begin{pmatrix}0\\-1\end{pmatrix}=-(a_1+a_2)\end{split}\]</div>
+<div class="math">
+\[\begin{split}\mathbf{b_1}=\mathbf{a_2}-\mathbf{a_3}=\begin{pmatrix}-\sqrt{3}/2\\3/2\end{pmatrix}, \mathbf{b_2}=\mathbf{a_3}-\mathbf{a_1}=\begin{pmatrix}-\sqrt{3}/2\\-3/2\end{pmatrix}, \mathbf{b_3}=\mathbf{a_1}-\mathbf{a_2}=\begin{pmatrix}-\sqrt{3}\\0\end{pmatrix}\end{split}\]</div>
+<p>Set <span class="math">\(\mathbf{b_1},\mathbf{b_2}\)</span> as two base vectors, then the reciprocal
+lattice spanned by <span class="math">\(\mathbf{b_1^*},\mathbf{b_2^*}\)</span> with
+<span class="math">\(\mathbf{b_i}\cdot\mathbf{b_j^*}=2\pi\delta_{ij}\)</span>, that is</p>
+<div class="math">
+\[\begin{split}\mathbf{b_1^*}=2\pi\begin{pmatrix}-1/\sqrt{3}\\1/3\end{pmatrix}, \mathbf{b_2^*}=2\pi\begin{pmatrix}-1/\sqrt{3}\\-1/3\end{pmatrix}\end{split}\]</div>
+<p>Define
+<span class="math">\(\mathbf{K}=\frac{1}{3}(\mathbf{b_1^*}+\mathbf{b_2^*})=\begin{pmatrix}-4\sqrt{3}\pi/9\\0\end{pmatrix}, \mathbf{K'}=-\mathbf{K}\)</span>.</p>
+<hr class="docutils" />
+<p>We get the Hamiltonian:</p>
+<div class="math">
+\[\begin{split}H=M\sum_i(a_{iA}^{\dagger}a_{iA}-a_{iB}^{\dagger}a_{iB})+t\sum_{&lt;i,j&gt;}(a_{iA}^{\dagger}a_{jB}+\textit{h.c.})+t_2\sum_{&lt;&lt;i,j&gt;&gt;}(a_{iA}^{\dagger}a_{jA}+a_{iB}^{\dagger}a_{jB}+\textit{h.c.})\end{split}\]</div>
+<p><span class="math">\(M\)</span> breaks inversion symmetry of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>
+sublattice, and <span class="math">\(t_2\)</span> is the next-nearest-neighbor coupling, for a
+staggered magnetic field shows below, it changes
+<span class="math">\(t_{ij}\to t_{ij}e^{i\frac{e}{\hbar}\int_{j\to i}\mathbf{\mathcal{A}}\cdot d\mathbf{l}}=t_{ij}e^{i\frac{e}{\hbar}\chi\Phi_0}=t_{ij}e^{i\frac{e}{\hbar}\chi\frac{h}{e}}=t_{ij}e^{i\phi}\)</span>.</p>
+<div class="figure" id="id3">
+<img alt="mag" src="../../_images/mag.png" />
+<p class="caption"><span class="caption-text">mag</span></p>
+</div>
+<p>Use
+<span class="math">\(a_{iA}=\frac{1}{\sqrt{N}}\sum_ka_{kA}e^{i\mathbf{k}\cdot\mathbf{R}_{iA}}, a_{iB}=\frac{1}{\sqrt{N}}\sum_ka_{kB}e^{i\mathbf{k}\cdot\mathbf{R}_{iB}}\)</span>,
+<span class="math">\(N\)</span> is the number of unit cell. Then we can get:</p>
+<div class="math">
+\[\begin{split}H=\sum_k\begin{pmatrix}a_{kA}^{\dagger}&amp;a_{kB}^{\dagger}\end{pmatrix}H(k)\begin{pmatrix}a_{kA}\\a_{kB}\end{pmatrix}\end{split}\]</div>
+<hr class="docutils" />
+<p>We arrived at</p>
+<div class="math">
+\[H(k)=h_0\sigma_0+\mathbf{h}\cdot\mathbf{\sigma}\]</div>
+<p>with</p>
+<div class="math">
+\[h_0=2t_2cos\phi\sum_icos\mathbf{k}\cdot\mathbf{b_i}\]</div>
+<div class="math">
+\[h_x=t\sum_icos\mathbf{k}\cdot\mathbf{a_i}\]</div>
+<div class="math">
+\[h_y=-t\sum_isin\mathbf{k}\cdot\mathbf{a_i}\]</div>
+<div class="math">
+\[h_z=M+2t_2sin\phi\sum_isin\mathbf{k}\cdot\mathbf{b_i}\]</div>
+<p>Because of the <span class="math">\(C_3\)</span> symmetry, the Dirac cone can only happen at
+<span class="math">\(K,K'\)</span>. At the vicinity of <span class="math">\(K\)</span>, we have</p>
+<div class="math">
+\[H(K+q)=-3t_2cos\phi+\frac{3}{2}t_1(q_x\sigma_x-q_y\sigma_y)+(M+3\sqrt{3}t_2sin\phi)\sigma_z\]</div>
+<p>At the vicinity of <span class="math">\(K'\)</span>, we have</p>
+<div class="math">
+\[H(K'+q)=-3t_2cos\phi-\frac{3}{2}t_1(q_x\sigma_x-q_y\sigma_y)+(M-3\sqrt{3}t_2sin\phi)\sigma_z\]</div>
+<p>where <span class="math">\(-\pi&lt;\phi&lt;\pi\)</span>.</p>
+<hr class="docutils" />
+<p>Start from <span class="math">\(M\to \pm\infty\)</span>, we have zero Chern number, assuming
+<span class="math">\(t_2&gt;0, \phi&gt;0\)</span>, from the previous results, when <span class="math">\(M\)</span> from
+<span class="math">\(+\infty\)</span> decreases to <span class="math">\(M=3\sqrt{3}t_2sin\phi\)</span>, <span class="math">\(K'\)</span>
+band close and reopen, the Chern number changes to</p>
+<div class="math">
+\[\begin{split}C=-\frac{1}{2}sign((M-3\sqrt{3}t_2sin\phi)&lt;0)+\frac{1}{2}sign((M-3\sqrt{3}t_2sin\phi)&lt;0)=1\end{split}\]</div>
+<p>Then when <span class="math">\(M&gt;-3\sqrt{3}t_2sin\phi\)</span> to
+<span class="math">\(M&lt;-3\sqrt{3}t_2sin\phi\)</span>, we have</p>
+<div class="math">
+\[\begin{split}C-1=\frac{1}{2}sign((M+3\sqrt{3}t_2sin\phi)&lt;0)-\frac{1}{2}sign((M+3\sqrt{3}t_2sin\phi)&lt;0) \Rightarrow C=0\end{split}\]</div>
+<p>We can do the same calculation for <span class="math">\(\phi&lt;0\)</span>, we get the phase
+chart below:</p>
+<div class="figure" id="id4">
+<img alt="phase chart" src="../../_images/51.png" />
+<p class="caption"><span class="caption-text">phase chart</span></p>
+</div>
+<hr class="docutils" />
+<p>Because <span class="math">\(k_x,k_y\)</span> have no dependence on <span class="math">\(M,t_2,\phi\)</span>,
+<span class="math">\(h_z\)</span> in the range of
+<span class="math">\((M-3\sqrt{3}t_2sin\phi\to M+3\sqrt{3}t_2sin\phi)\)</span>, we can draw a
+spheroid <span class="math">\(\Sigma'\)</span> with height <span class="math">\(6\sqrt{3}sin\phi\)</span> and center
+<span class="math">\((0,0,M/t_2)\)</span>. We can get the Chern number using following
+pictures:</p>
+<div class="figure" id="id5">
+<img alt="spheroid" src="../../_images/5.jpg" />
+<p class="caption"><span class="caption-text">spheroid</span></p>
+</div>
+<hr class="docutils" />
+<p>Also, we can get the Chern number using the whole 3-d picture (set
+<span class="math">\(\phi=\pi/2, M/t_2=6,0,-6\)</span>):</p>
+<p><img alt="haldane1" src="../../_images/haldane1.jpg" /> <img alt="haldane2" src="../../_images/haldane2.jpg" /> <img alt="haldane3" src="../../_images/haldane3.jpg" /></p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Berry&#39;s Phase/main.html" class="btn btn-neutral float-right" title="Berry’s Phase">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2.html" class="btn btn-neutral" title="Lecture 2 : Berry Phase and Chern number"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, bczhu.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

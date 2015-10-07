@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Phase space Lagrangian &mdash; Physics 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Physics 0.1 documentation" href="../index.html"/>
+        <link rel="next" title="Lecture notes" href="../TI/Lecture notes/main.html"/>
+        <link rel="prev" title="Notes on Physics" href="../index.html"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42580598-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8a3e22ee1e151444cc6469d69651f3eb' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../index.html" class="fa fa-home"> Physics</a>
+        
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Phase space Lagrangian</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#regular-derivation">Regular derivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dynamic-system">Dynamic system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Phase space Lagrangian</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../TI/Lecture notes/main.html">Lecture notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../TI/Lecture notes/1.html">Lecture 1 : 1-d SSH model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TI/Lecture notes/2.html">Lecture 2 : Berry Phase and Chern number</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../TI/Berry's Phase/main.html">Berry&#8217;s Phase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../TI/Berry's Phase/Preliminary.html">Preliminary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TI/Berry's Phase/main.html#some-topics">some topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../TI/Weyl_semi-metal.html">Weyl Semi-metal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../TI/Weyl_semi-metal.html#graphene">Graphene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TI/Weyl_semi-metal.html#three-dimension-weyl-semi-metal-and-chern-number">Three dimension: Weyl semi-metal and Chern number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TI/Weyl_semi-metal.html#bulk-boundary-corresponding">Bulk-boundary corresponding</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CMP/linear response theory/main.html">Linear response theory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CMP/linear response theory/Kubo_formula.html">Kubo formula</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CMP/Fermi's_Golden_rule.html">Fermi&#8217;s Golden rule</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Python/note.html">Python 学习</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Physics</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Phase space Lagrangian</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/CM/Lagrangian.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="phase-space-lagrangian">
+<span id="id1"></span><h1>Phase space Lagrangian<a class="headerlink" href="#phase-space-lagrangian" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="regular-derivation">
+<span id="id2"></span><h2>Regular derivation<a class="headerlink" href="#regular-derivation" title="Permalink to this headline">¶</a></h2>
+<p>The climax part of classical mechanics lies in <strong>the Lagrangian and Hamiltonian form</strong>. It starts with the extremal principle, the real motion of a mechanical system is the one makes the variation of <em>the action</em> <span class="math">\(S\)</span> vanish, i.e.,</p>
+<div class="math">
+\[\delta S=\delta \int L(q,\dot{q},t) dt=0\]</div>
+<p>When the Lagrangian is not depend on time explicitly, we get</p>
+<div class="math">
+\[\delta L=\frac{\partial L}{\partial q}\delta q+\frac{\partial L}{\partial \dot{q}}\delta \dot{q}=\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\delta {q}\right)+\left[\frac{\partial L}{\partial q}-\frac{d}{dt}\frac{\partial L}{\partial \dot{q}}\right]\delta q\]</div>
+<p>which gives us <em>the Lagrangian equation</em>:</p>
+<div class="math">
+\[\frac{d}{dt}\frac{\partial L}{\partial \dot{q}}=\frac{\partial L}{\partial q}\]</div>
+<p>Define the <em>canonical momentum</em> <span class="math">\(p=\frac{\partial L}{\partial \dot{q}}\)</span>, we have</p>
+<div class="math">
+\[\dot{p}=\frac{\partial L}{\partial q}\]</div>
+<p>We can easily prove that energy is an <em>integral of motion</em> (which is a conserved quantity in motion) based on the homogeneity of time. When the Lagrangian does not depend on time explicitly, we found that its total derivative is</p>
+<div class="math">
+\[\begin{split}\frac{dL}{dt}=&amp;\frac{\partial L}{\partial q}\dot{q}+\frac{\partial L}{\partial \dot{q}} \ddot{q}\\
+=&amp;\frac{d}{dt}\left(p\dot{q}\right)\end{split}\]</div>
+<p>We have used Lagrangian equation in the above derivation,and we have now</p>
+<div class="math">
+\[\frac{d}{dt}\left(p\dot{q}-L\right)=0\]</div>
+<p>indicating that <span class="math">\(H=p\dot{q}-L\)</span> is conserved in the motion, which is called <em>Hamiltonian</em> with physical meaning of energy.</p>
+<p>On the other hand, from:</p>
+<div class="math">
+\[\begin{split}dL(q,\dot{q})=&amp;\frac{\partial L}{\partial q}dq+\frac{\partial L}{\partial \dot{q}}d\dot{q} \\
+=&amp;\dot{p}dq+pd\dot{q}\\
+=&amp;\dot{p}dq+d(p\dot{q})-\dot{q}dp\\
+\Rightarrow d(p\dot{q}-L)=&amp;-\dot{p}dq+\dot{q}dp\\
+  dH(q,p)=&amp;-\dot{p}dq+\dot{q}dp\end{split}\]</div>
+<p>which means <span class="math">\(dH\)</span> is the total differential with respect to <span class="math">\(q\)</span> and <span class="math">\(p\)</span>. And from:</p>
+<div class="math">
+\[dH=\frac{\partial H}{\partial q}dq+\frac{\partial H}{\partial p}dp\]</div>
+<p>we get</p>
+<div class="math">
+\[\dot{p}=-\frac{\partial H}{\partial q} \qquad \dot{q}=\frac{\partial H}{\partial p}\]</div>
+<p>This is the <strong>Hamilton canonical equations</strong>.</p>
+<p>The total derivative with time is:</p>
+<div class="math">
+\[\begin{split}\frac{dH}{dt}=&amp;\frac{\partial H}{\partial t}+\frac{\partial H}{\partial q}\dot{q}+\frac{\partial H}{\partial p}\dot{p} \\
+=&amp;\frac{\partial H}{\partial t}\end{split}\]</div>
+<p>where Hamilton&#8217;s equations are used. It also indicates that if H is not depend on time explicitly, we have the conservation of energy.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">From Lagragian to Hamiltonian, we did a <em>Legendre transformation</em>, makes the dependence <span class="math">\(L(q,\dot{q},t)\)</span> to <span class="math">\(H(q,p,t)\)</span>, i.e., <span class="math">\(L\)</span> is a function in <em>configuration space</em> <span class="math">\((q,\dot{q})\)</span>, but <span class="math">\(H\)</span> is in <em>phase space</em> <span class="math">\((q,p)\)</span>.</p>
+</div>
+</div>
+<div class="section" id="dynamic-system">
+<span id="id3"></span><h2>Dynamic system<a class="headerlink" href="#dynamic-system" title="Permalink to this headline">¶</a></h2>
+<p>Mathematically, a continuous-time dynamical system is defined to be a system of first order differential equations</p>
+<div class="math">
+\[\dot{\mathbf{z}} = \mathbf{f}(\mathbf{z}, t) , \quad t \in \mathbb{R}\]</div>
+<p>where <span class="math">\(\mathbf{f}\)</span> is known as the vector field and <span class="math">\(\mathbb{R}\)</span> is the set of real numbers. The space in which <span class="math">\(\mathbf{z}\)</span> is defined is called phase space.</p>
+<p>Lagrange’s equations do not form a dynamical system, because they implicitly contain second-order derivatives, <span class="math">\(\ddot{q}\)</span>. However, there is a standard way to obtain a system of first-order equations from a second-order system, which is to double the size of the space of time-dependent variables by treating the generalized velocities <span class="math">\(u\)</span> as independent of the generalized coordinates, so that the dynamical system is <span class="math">\(\dot{q} = u, \dot{u} = \ddot{q}(q,u,t)\)</span>. Then the phase space is of dimension <span class="math">\(2n\)</span>. This trick is used very frequently in numerical problems, because the standard numerical integrators require the problem to be posed in terms of systems of first-order differential equations.</p>
+<p>In the particular case of Lagrangian mechanics, expanding out <span class="math">\(\frac{d}{dt}\frac{\partial L}{\partial \dot{q}}\)</span> using the chain rule and moving all but the highest-order time derivatives to the right-hand side,</p>
+<div class="math">
+\[\sum\limits_{j=1}^{n}\frac{\partial^2 L}{\partial \dot{q}_i \partial \dot{q}_j}\ddot{q}_j=\frac{\partial L}{\partial q_i}-\frac{\partial^2 L}{\partial \dot{q}_i \partial t}-\sum\limits_{j=1}^{n}\frac{\partial^2 L}{\partial \dot{q}_i \partial {q}_j}\dot{q}_j\]</div>
+<p>The matrix <span class="math">\(H\)</span> acting on <span class="math">\(\ddot{q}\)</span>, whose elements are given by <span class="math">\(H_{i,j}\equiv\frac{\partial^2 L}{\partial \dot{q}_i \partial \dot{q}_j}\)</span>, is called the <em>Hessian matrix</em> . It is a kind of generalized mass tensor, and for our method to work we require it to be <em>nonsingular</em>, so that its inverse, <span class="math">\(H^{-1}\)</span>, exists and we can find <span class="math">\(\ddot{q}\)</span>. Then our dynamical system becomes:</p>
+<div class="math">
+\[\begin{split}\dot{q}=&amp;u, \\
+\dot{u}=&amp;H^{-1}\cdot\left[\frac{\partial L}{\partial q}-\frac{\partial L}{\partial \dot{q}\partial t}-\frac{\partial^2 L}{\partial \dot{q}\partial q}\cdot \dot{q}\right]\end{split}\]</div>
+<p><strong>Momentum instead of velocity</strong></p>
+<p>We can achieve our aim of finding 2n first-order differential equations by using many choices of auxiliary variables other than <span class="math">\(u\)</span>. These will be more complicated functions of the generalized velocities, but the extra freedom of choice may also bring advantages.</p>
+<p>In particular, Hamilton realized that it is very natural to use as the
+new auxiliary variables the set <span class="math">\(p=\left\{p_i|i=1,\cdots,n\right\}\)</span> defined by</p>
+<div class="math">
+\[p_i\equiv\frac{\partial}{\partial \dot{q}_i}L(q,\dot{q},t)\]</div>
+<p>where <span class="math">\(p_i\)</span> is called the <strong>canonical momentum</strong> conjugate
+to <span class="math">\(q_i\)</span>.</p>
+<p>At this moment, we shall assume that the above equation can be solved to give <span class="math">\(\dot{q}\)</span> as a function of <span class="math">\(q\)</span> and <span class="math">\(p\)</span></p>
+<div class="math">
+\[\dot{q}=u(q,p,t).\]</div>
+<p>The Lagrange&#8217;s equations immediately give us</p>
+<div class="math">
+\[\dot{p}=\frac{\partial L(q,\dot{q},t)}{\partial q}\left.\right|_{\dot{q}=u(q,p,t)}\]</div>
+<p>The above two equations do indeed form a dynamical system, but so far it looks rather unsatisfactory: now <span class="math">\(u\)</span> is defined only implicitly as a
+function of the phase-space variables <span class="math">\(q\)</span> and <span class="math">\(p\)</span>, yet the right-hand side of above equation involves a partial derivative in which the <span class="math">\(q\)</span>-dependence of
+<span class="math">\(u\)</span> is ignored!</p>
+<p>We can fix the latter problem by holding <span class="math">\(p\)</span> fixed in partial derivatives
+with respect to <span class="math">\(q\)</span> (because it is an independent phase-space variable) but then subtracting a correction term to cancel the contribution coming from the <span class="math">\(q\)</span>-dependence of <span class="math">\(u\)</span>. Applying the chain rule, we get</p>
+<div class="math">
+\[\begin{split}\dot{p}=&amp;\frac{\partial L(q,u,t)}{\partial q}-\frac{\partial L}{\partial u}\frac{\partial u}{\partial q} \\
+=&amp;\frac{\partial L(q,u,t)}{\partial q}-p\frac{\partial u}{\partial q} \\
+=&amp;\frac{\partial}{\partial q}\left[L(q,u,t)-p\cdot u\right] \\
+=&amp;-\frac{\partial H}{\partial q}\end{split}\]</div>
+<p>where we have already defined the Hamiltonian <span class="math">\(H(q, p, t)= p\cdot u − L(q,u, t)\)</span> is a function of <span class="math">\((q, p)\)</span>.</p>
+<p>Given the importance of <span class="math">\(\partial H/ \partial q\)</span> it is natural to investigate whether <span class="math">\(\partial H/\partial p\)</span> plays a significant role as well. Differentiating <span class="math">\(H(q, p, t)= p\cdot u − L(q,u, t)\)</span> we get</p>
+<div class="math">
+\[\begin{split}\frac{\partial H}{\partial p}=&amp;u(q,p,t)-\left[p-\frac{\partial}{\partial u}L(q,u,t)\right]\frac{\partial u}{\partial p} \\
+=&amp;\dot{q}\end{split}\]</div>
+<p>the above two equations are just the <strong>Hamilton&#8217;s equations</strong> we derived before.</p>
+</div>
+<div class="section" id="id4">
+<h2>Phase space Lagrangian<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>The equation <span class="math">\(H(q,p,t)\equiv p\cdot\dot{q}-L(q,\dot{q},t)\)</span> suggest we define <span class="math">\(L_{ph}(q,\dot{q},p,t)\equiv p\cdot\dot{q}-H(q,p,t)\)</span>. If <span class="math">\(\dot{q}=u(q,p,t)\)</span> were identically satisfied, even on arbitrarily varied phase-space paths, then <span class="math">\(L_{ph}\)</span> would simply be <span class="math">\(L\)</span> expressed in phase-space coordinates.</p>
+<p>However, one can easily construct a counter example to show that this is not the case: consider a variation of the path in which we can vary the direction of its tangent vector, at some point <span class="math">\(z\equiv (q, p)\)</span>, while keeping this
+point fixed. Then <span class="math">\(\dot{q}\)</span> changes, but <span class="math">\(u\)</span> remains the same. Thus <span class="math">\(L_{ph}\)</span> and <span class="math">\(L\)</span> are the same value only on the subset of paths (which includes the physical paths) for which <span class="math">\(p\cdot\dot{q} = p\cdot u(q, p, t)\)</span> .</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/1.jpg"><img alt="../_images/1.jpg" src="../_images/1.jpg" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text"><strong>Fig. 1</strong> Phase-space variations of different paths.</span></p>
+</div>
+<p>Replacing <span class="math">\(L\)</span> by <span class="math">\(L_{ph}\)</span> in <span class="math">\(S =
+\int L dt\)</span> we define the phase-space action integral</p>
+<div class="math">
+\[S_{ph}\left[q, p\right] = \int_{t_1}^{t_2}dt L_{ph}(q,p,\dot{q},t)=\int_{t_1}^{t_2}dt \left(p\cdot\dot{q}-H(q,p,t)\right)\]</div>
+<p>We know from variational calculus that <span class="math">\(S_{ph}\)</span> is stationary under arbitrary
+variations of the phase-space path (with endpoints fixed), explicitly, we get:</p>
+<div class="math">
+\[\begin{split}\delta S_{ph} =&amp;\delta\int_{t_1}^{t_2}dt \left(p\cdot\dot{q}-H(q,p,t)\right) \\
+=&amp;\int_{t_1}^{t_2}dt \left(\delta p\cdot\dot{q}+p\cdot\delta\dot{q}-\delta p \frac{\partial H(q,p,t)}{\partial p}-\delta q \frac{\partial H(q,p,t)}{\partial q}\right) \\
+=&amp;p\delta q\left. \right |_{t_1}^{t_2}+\int_{t_1}^{t_2}dt \left\{\delta p\cdot\left[\dot{q}-\frac{\partial H(q,p,t)}{\partial p}\right]-\delta q\cdot\left[\dot{p}+ \frac{\partial H(q,p,t)}{\partial q}\right]\right\}\end{split}\]</div>
+<p>which gives us the <strong>Hamilton&#8217;s equations</strong>:</p>
+<div class="math">
+\[\dot{p}=-\frac{\partial H}{\partial q} \qquad \dot{q}=\frac{\partial H}{\partial p}\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>More generally, the phase-space Lagrangian can depend on <span class="math">\(\dot{p}\)</span> as well, and makes the Lagrange&#8217;s equations become:</p>
+<div class="last math">
+\[\begin{split}\frac{\delta L_{ph}(q,\dot{q},p,\dot{p})}{\delta q}=&amp;\frac{\partial L_{ph}}{\partial q}-\frac{d}{dt}\frac{\partial L_{ph}}{\partial \dot{q}}=0 \\
+\frac{\delta L_{ph}(q,\dot{q},p,\dot{p})}{\delta p}=&amp;\frac{\partial L_{ph}}{\partial p}-\frac{d}{dt}\frac{\partial L_{ph}}{\partial \dot{p}}=0\end{split}\]</div>
+</div>
+<p><strong>References</strong></p>
+<ol class="arabic simple">
+<li>L.D. Landau &amp; E.M. Lifshitz, <em>Mechanics</em>.</li>
+<li>Lecture notes by <strong>Bob Dewar</strong> on website <a class="reference external" href="http://people.physics.anu.edu.au/~rld105/C01_ClassMech/">Classical Mechanics</a>.</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../TI/Lecture notes/main.html" class="btn btn-neutral float-right" title="Lecture notes">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Notes on Physics"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, bczhu.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

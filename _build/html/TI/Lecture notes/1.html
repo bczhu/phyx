@@ -1,0 +1,754 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Lecture 1 : 1-d SSH model &mdash; Physics 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Physics 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Lecture notes" href="main.html"/>
+        <link rel="next" title="Lecture 2 : Berry Phase and Chern number" href="2.html"/>
+        <link rel="prev" title="Lecture notes" href="main.html"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42580598-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8a3e22ee1e151444cc6469d69651f3eb' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../../index.html" class="fa fa-home"> Physics</a>
+        
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CM/Lagrangian.html">Phase space Lagrangian</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CM/Lagrangian.html#regular-derivation">Regular derivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CM/Lagrangian.html#dynamic-system">Dynamic system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CM/Lagrangian.html#id4">Phase space Lagrangian</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="main.html">Lecture notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Lecture 1 : 1-d SSH model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">Lecture 2 : Berry Phase and Chern number</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Berry's Phase/main.html">Berry&#8217;s Phase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Berry's Phase/Preliminary.html">Preliminary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Berry's Phase/main.html#some-topics">some topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Weyl_semi-metal.html">Weyl Semi-metal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Weyl_semi-metal.html#graphene">Graphene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Weyl_semi-metal.html#three-dimension-weyl-semi-metal-and-chern-number">Three dimension: Weyl semi-metal and Chern number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Weyl_semi-metal.html#bulk-boundary-corresponding">Bulk-boundary corresponding</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CMP/linear response theory/main.html">Linear response theory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CMP/linear response theory/Kubo_formula.html">Kubo formula</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../CMP/Fermi's_Golden_rule.html">Fermi&#8217;s Golden rule</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Python/note.html">Python 学习</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Physics</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="main.html">Lecture notes</a> &raquo;</li>
+      
+    <li>Lecture 1 : 1-d SSH model</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/TI/Lecture notes/1.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="lecture-1-1-d-ssh-model">
+<h1>Lecture 1 : 1-d SSH model<a class="headerlink" href="#lecture-1-1-d-ssh-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-su-schrieffer-heeger-ssh-model">
+<h2>The Su-Schrieffer&#8211;Heeger (SSH) model<a class="headerlink" href="#the-su-schrieffer-heeger-ssh-model" title="Permalink to this headline">¶</a></h2>
+<p>The simplest non-trivial topology : 1-d lattice.</p>
+<p>Peierls instability makes the atoms dimerize.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/1.png"><img alt="../../_images/1.png" src="../../_images/1.png" style="width: 70%;" /></a>
+</div>
+<p>Polyacetylene Structure:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/2.jpg"><img alt="../../_images/2.jpg" src="../../_images/2.jpg" style="width: 70%;" /></a>
+</div>
+</div>
+<div class="section" id="tight-binding-method-first-quantization">
+<h2>Tight-binding method: first quantization<a class="headerlink" href="#tight-binding-method-first-quantization" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/3.png"><img alt="1-d atom chain" src="../../_images/3.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">1-d atom chain</span></p>
+</div>
+<p>Tight-binding method: Single electron total Hamiltonian in atom chain:</p>
+<div class="math">
+\[H=\frac{p^2}{2m}+U(x)\]</div>
+<p>with periodical potential: <span class="math">\(U(x+na)=U(x)\)</span></p>
+<p>Assume single atom potential <span class="math">\(V(x)\)</span> with Hamiltonian</p>
+<div class="math">
+\[H_0=\frac{p^2}{2m}+V(x)\]</div>
+<hr class="docutils" />
+<p>and well solved eigen-value and eigen-wave-function:(consider only one
+state)</p>
+<div class="math">
+\[H_0\phi(x)=E_0\phi(x)\]</div>
+<p>Do the combination</p>
+<div class="math">
+\[\psi(x)=\sum\limits_n a_n\phi_n\]</div>
+<p>with <span class="math">\(\phi_n=\phi(x-x_n), x_n=na\)</span>. Define
+<span class="math">\(\Delta U(x)=U(x)-V(x)\)</span>, and substitute following equation</p>
+<div class="math">
+\[H\psi=\left(H_0+\Delta U\right)\psi=E\psi\]</div>
+<p>we get</p>
+<div class="math">
+\[\sum_n \langle \phi_m|\Delta U(x-x_n)|\phi_n\rangle a_n=(E-E_0)a_m\]</div>
+<hr class="docutils" />
+<p>Define:
+<span class="math">\(\langle \phi(x-ma+na)|\Delta U(x) |\phi(x)\rangle=-J(x_m-x_n)\)</span></p>
+<p>We get:</p>
+<div class="math">
+\[-\sum_n J(x_m-x_n) a_n=(E-E_0) a_m\]</div>
+<p>Because of the Tranformation symmetry of the Hamiltonian, the resulting
+wavefunction <span class="math">\(\psi(x)\)</span> should take Bloch form, which means we
+should have the solution <span class="math">\(a_m=e^{ikx_m}\)</span>, then, we get</p>
+<div class="math">
+\[E-E_0=-\sum_n J(x_n)e^{-ikx_n}\]</div>
+<p>Consider only the nearest-hopping interaction, define
+<span class="math">\(J_0=J(0), J=J(\pm a)\)</span>, then we have:</p>
+<div class="math">
+\[\begin{split}E-E_0+J_0=&amp;-J(e^{ika}+e^{-ika}) \\
+=&amp;-2Jcoska\end{split}\]</div>
+</div>
+<div class="section" id="second-quantization">
+<h2>Second quantization<a class="headerlink" href="#second-quantization" title="Permalink to this headline">¶</a></h2>
+<p>In the second quantization language, the expectation value of energy
+becomes a operator, set <span class="math">\(\mathscr{H}=\frac{p^2}{2m}+U(x)\)</span>, we have</p>
+<div class="math">
+\[H=\langle \psi|\mathscr{H}|\psi \rangle \Rightarrow \hat{H}=\sum_{m,n}\hat{c}_m^\dagger H_{mn}\hat{c}_n\]</div>
+<p>with
+<span class="math">\(\psi \to \hat{\psi}=\sum\limits_n \hat{c}_n \phi_n, H_{mn}=\langle \phi|\mathscr{H}|\phi \rangle\)</span>
+<span class="math">\(\phi_n\)</span> is a orthonormal and complete basis in <em>Hilbert space</em>,
+like plane-waves <span class="math">\(e^{ikx}\)</span> or energy eigen-states of <span class="math">\(H_0\)</span>,
+<span class="math">\(\mathscr{H}\)</span> is the energy operator in single particle first
+quantization picture, which can only act on Hilbert space, while the
+second quantization energy operator <span class="math">\(\hat{H}\)</span> acts on <em>Fock
+space</em>. Here, in tight-binding method, <span class="math">\(\phi_n\)</span> is the
+wave-function of site <span class="math">\(n\)</span> of the energy eigen-state <span class="math">\(H_0\)</span>.</p>
+<hr class="docutils" />
+<p>Consider only the nearest interaction, we have:</p>
+<div class="math">
+\[\hat{H}=\sum_{n=1}^M \hat{c}_n^\dagger \hat{c}_{n+1}t_n+h.c.\]</div>
+<p><span class="math">\(h.c.\)</span> means hermitian conjugation. Rewrite it in matrix form:
+<span class="math">\(\hat{H}=\sum\limits_{mn}\hat{c}_m \tilde{H}_{mn}c_n\)</span>, we have</p>
+<div class="math">
+\[\begin{split}\tilde{H}_{mn}=\begin{pmatrix} 0 &amp; t_1 &amp;0 &amp; \cdots&amp;t_M^*\\
+t_1^* &amp;0&amp;t_2&amp;\cdots&amp;0\\
+0&amp;t_2^*&amp;0&amp;\cdots&amp;0\\
+\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+t_M&amp;0&amp;0&amp;t_{M-1}^*&amp;0
+\end{pmatrix}\end{split}\]</div>
+<p>In the case when <span class="math">\(t=t_n\)</span>, <span class="math">\(\hat{c}_n\)</span> satisfy the Bloch
+condition, we can transform it into momentum space, with
+<span class="math">\(\hat{c}_n=\frac{1}{\sqrt{M}}\sum\limits_k \hat{c}_k e^{ikx_n}\)</span>,</p>
+<hr class="docutils" />
+<p>we can easily get</p>
+<div class="math">
+\[\hat{H}=\sum\limits_k \hat{c}_k^\dagger \hat{c}_k(te^{ika}+t^*e^{-ika})=\sum\limits_k \hat{c}_k^\dagger \hat{c}_k E(k)\]</div>
+<p>which gives us the dispersion relation:</p>
+<div class="math">
+\[\begin{split}E(k)=&amp;te^{ika}+t^*e^{-ika}\\
+=&amp;2tcoska \qquad \textit{for t is real}\end{split}\]</div>
+<p>On the other hand, keep in mind that we would get
+<span class="math">\(c_n=e^{ik(n-1)a}c_1\)</span>, that is</p>
+<div class="math">
+\[\begin{split}\hat{H}=\begin{pmatrix}c_1^\dagger&amp;c_2^\dagger&amp;\cdots&amp;c_M^\dagger \end{pmatrix}
+\begin{pmatrix} 0 &amp; t &amp;0 &amp; \cdots&amp;t^*\\
+t^* &amp;0&amp;t&amp;\cdots&amp;0\\
+0&amp;t^*&amp;0&amp;\cdots&amp;0\\
+\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+t&amp;0&amp;0&amp;t^*&amp;0
+\end{pmatrix}
+\begin{pmatrix}c_1\\c_2\\\vdots\\c_M\end{pmatrix}\end{split}\]</div>
+<hr class="docutils" />
+<div class="math">
+\[\begin{split}\Rightarrow &amp;\begin{pmatrix}c_1^\dagger&amp;c_1^\dagger e^{-ika}&amp;\cdots&amp;c_1^\dagger e^{-ik(M-1)a} \end{pmatrix}
+\begin{pmatrix} 0 &amp; t &amp;0 &amp; \cdots&amp;t^*\\
+t^* &amp;0&amp;t&amp;\cdots&amp;0\\
+0&amp;t^*&amp;0&amp;\cdots&amp;0\\
+\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+t&amp;0&amp;0&amp;t^*&amp;0
+\end{pmatrix}
+\begin{pmatrix}c_1\\c_1 e^{ika}\\\vdots\\c_1e^{ik(M-1)a}\end{pmatrix}\\
+=&amp;\begin{pmatrix}c_1^\dagger&amp;\cdots&amp;c_1^\dagger \end{pmatrix}
+\begin{pmatrix} te^{ika}+t^*e^{-ika} &amp; 0&amp;0\\
+0&amp;\ddots&amp;0\\
+0&amp;0&amp;te^{ika}+t^*e^{-ika}
+\end{pmatrix}
+\begin{pmatrix}c_1\\\vdots\\c_1\end{pmatrix}\end{split}\]</div>
+<p>which also gives us <span class="math">\(E(k)=te^{ika}+t^*e^{-ika}\)</span>.</p>
+<hr class="docutils" />
+<p>More generally, <span class="math">\(t_n\)</span> can be different from each other, for
+example, if they are all different up to <span class="math">\(4\)</span>, but have a
+super-periodicity with <span class="math">\(t_{5}=t_1\)</span>, then there will have 4
+sub-bands, in the example we will consider below, we have two <span class="math">\(t\)</span>,
+<span class="math">\(t_1\neq t_2\)</span>, and we have two sub-bands.</p>
+<p>If each atom have a valance electron, then the above mentioned energy
+band structure <span class="math">\(E(k)=2tcoska\)</span> is not the stable fundamental mode,
+it will dimerizes to lower the total energy, that means we&#8217;ll get
+following coupling case:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/2.jpg"><img alt="../../_images/2.jpg" src="../../_images/2.jpg" style="width: 70%;" /></a>
+</div>
+<p>with the Hamiltonian:</p>
+<div class="math">
+\[H=\sum_{n=1}^N(v_n c_{n,1}^\dagger c_{n,2}+w_nc_{n,2}^\dagger c_{n+1,1}+h.c.)\]</div>
+<p>with <span class="math">\(M=2N\)</span>.</p>
+</div>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>In 1-d atom chain, we have got the Hamiltonian in second-quantization
+frame as:</p>
+<div class="math">
+\[\hat{H}=\sum_{n=1}^M \hat{c}_n^\dagger \hat{c}_{n+1}t_n+h.c.\]</div>
+<p><span class="math">\(h.c.\)</span> means hermitian conjugation. Rewrite it in matrix form:
+<span class="math">\(\hat{H}=\sum\limits_{mn}\hat{c}_m {H}_{mn}\hat{c}_n\)</span>, we have</p>
+<div class="math">
+\[\begin{split}\hat{H}=\begin{pmatrix}c_1^\dagger&amp;c_2^\dagger&amp;\cdots&amp;c_M^\dagger \end{pmatrix}\begin{pmatrix} 0 &amp; t_1 &amp;0 &amp; \cdots&amp;t_M^*\\
+t_1^* &amp;0&amp;t_2&amp;\cdots&amp;0\\
+0&amp;t_2^*&amp;0&amp;\cdots&amp;0\\
+\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+t_M&amp;0&amp;0&amp;t_{M-1}^*&amp;0
+\end{pmatrix}\begin{pmatrix}c_1\\c_2\\\vdots\\c_M\end{pmatrix}\end{split}\]</div>
+</div>
+<div class="section" id="energy-band-and-topology">
+<h2>Energy band and topology<a class="headerlink" href="#energy-band-and-topology" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[\begin{split}\hat{H}=\begin{pmatrix}c_1^\dagger&amp;c_2^\dagger&amp;\cdots&amp;c_M^\dagger \end{pmatrix}\begin{pmatrix} 0 &amp; t_1 &amp;0 &amp; \cdots&amp;t_M^*\\
+t_1^* &amp;0&amp;t_2&amp;\cdots&amp;0\\
+0&amp;t_2^*&amp;0&amp;\cdots&amp;0\\
+\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+t_M&amp;0&amp;0&amp;t_{M-1}^*&amp;0
+\end{pmatrix}\begin{pmatrix}c_1\\c_2\\\vdots\\c_M\end{pmatrix}\end{split}\]</div>
+<p><span class="math">\(t_n\)</span> can differ from each other.</p>
+<ol class="arabic simple">
+<li>For a open chain with <span class="math">\(M\)</span> atoms, we have <span class="math">\(t_M=0\)</span>, and
+this matrix will give us <span class="math">\(M\)</span> eigen-values and eigen-functions.</li>
+<li>Possess translational invariance with <span class="math">\(c_{n+1}=c_1e^{ikna}\)</span>, it
+will be diagonalized with <span class="math">\(H(k)=te^{ika}+t^*e^{-ika}\)</span>.</li>
+<li>Staggered hopping parameters with <span class="math">\(t_1\neq t_2\)</span>, but have
+property <span class="math">\(c_{2n+1}=c_1e^{iknb},c_{2n+2}=c_2e^{iknb}\)</span>. We can
+block the Hamiltonian up in <span class="math">\(2\times 2\)</span> blocks and also pair up
+<span class="math">\(c_{2n+1},c_{2n+2}\)</span>.</li>
+</ol>
+<hr class="docutils" />
+<p>The Hamiltonian:</p>
+<div class="math">
+\[H=\sum_{n=1}^N(v_n c_{n,1}^\dagger c_{n,2}+w_nc_{n,2}^\dagger c_{n+1,1}+h.c.)\]</div>
+<p>with <span class="math">\(M=2N\)</span>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/2.jpg"><img alt="../../_images/2.jpg" src="../../_images/2.jpg" style="width: 70%;" /></a>
+</div>
+<p>For a more beautiful notation, define
+<span class="math">\(\mathbf{c}_n^\dagger=(c_{n,1}^\dagger,c_{n,2}^\dagger)=(c_{2n-1}^\dagger,c_{2n}^\dagger)\)</span>,
+then we have</p>
+<div class="math">
+\[H=\sum_{m,n=1}^N \mathbf{c}_m^\dagger H_{mn}\mathbf{c}_n\]</div>
+<p>with</p>
+<div class="math">
+\[\begin{split}\mathbf{c}_n^\dagger H_{nn}\mathbf{c}_n=\begin{pmatrix}c_{n,1}^\dagger&amp;c_{n,2}^\dagger\end{pmatrix}\begin{pmatrix}0&amp;v_n\\v_n^*&amp;0\end{pmatrix}\begin{pmatrix}c_{n,1}\\c_{n,2}\end{pmatrix}=\begin{pmatrix}c_{n,1}^\dagger&amp;c_{n,2}^\dagger\end{pmatrix}U_n\begin{pmatrix}c_{n,1}\\c_{n,2}\end{pmatrix}\end{split}\]</div>
+<hr class="docutils" />
+<p>and</p>
+<div class="math">
+\[\begin{split}\mathbf{c}_n^\dagger H_{nn+1}\mathbf{c}_{n+1}=\begin{pmatrix}c_{n,1}^\dagger&amp;c_{n,2}^\dagger\end{pmatrix}\begin{pmatrix}0&amp;0\\w_n&amp;0\end{pmatrix}\begin{pmatrix}c_{n+1,1}\\c_{n+1,2}\end{pmatrix}=\begin{pmatrix}c_{n,1}^\dagger&amp;c_{n,2}^\dagger\end{pmatrix}T_n\begin{pmatrix}c_{n+1,1}\\c_{n+1,2}\end{pmatrix}\end{split}\]</div>
+<div class="math">
+\[\begin{split}\mathbf{c}_{n+1}^\dagger H_{n+1n}\mathbf{c}_{n}=\begin{pmatrix}c_{n+1,1}^\dagger&amp;c_{n+1,2}^\dagger\end{pmatrix}T_n^\dagger\begin{pmatrix}c_{n,1}\\c_{n,2}\end{pmatrix}\end{split}\]</div>
+<p>when <span class="math">\(|m-n|&gt;1\)</span>, we have <span class="math">\(H_{mn}=0\)</span>.</p>
+<p>For example, for 6 cells (12 sites), we have</p>
+<div class="math">
+\[\begin{split}H=\begin{pmatrix}U_1&amp;T_1&amp;0&amp;\cdots&amp;T_6^\dagger\\
+T_1^\dagger&amp;U_2&amp;T_2&amp;\cdots&amp;0\\
+0&amp;T_2^\dagger&amp;U_3&amp;\cdots&amp;0\\
+\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+T_6&amp;0&amp;0&amp;\cdots&amp;U_6
+\end{pmatrix}\end{split}\]</div>
+<hr class="docutils" />
+<div class="math">
+\[\begin{split}H_{mn}=\begin{pmatrix}U_1&amp;T_1&amp;0&amp;\cdots&amp;T_6^\dagger\\
+T_1^\dagger&amp;U_2&amp;T_2&amp;\cdots&amp;0\\
+0&amp;T_2^\dagger&amp;U_3&amp;\cdots&amp;0\\
+\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+T_6&amp;0&amp;0&amp;\cdots&amp;U_6
+\end{pmatrix}\end{split}\]</div>
+<ul>
+<li><p class="first">Open chain: <span class="math">\(T_6=0\)</span>.</p>
+</li>
+<li><p class="first">Closed chain with translational symmetry, <span class="math">\(T_n=T,U_n=U\)</span>, with</p>
+<div class="math">
+\[\begin{split}U=\begin{pmatrix}0&amp;v\\v^*&amp;0\end{pmatrix},T=\begin{pmatrix}0&amp;0\\w&amp;0\end{pmatrix}\end{split}\]</div>
+<p>Using three Pauli matrices</p>
+<div class="math">
+\[\begin{split}\sigma_x=\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix},\sigma_y=\begin{pmatrix}0&amp;-i\\i&amp;0\end{pmatrix},\sigma_z=\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}\end{split}\]</div>
+</li>
+</ul>
+<hr class="docutils" />
+<p>We get</p>
+<div class="math">
+\[U=Re(v)\sigma_x-Im(v)\sigma_y,T=\frac{1}{2}w(\sigma_x-i\sigma_y)\]</div>
+<p>Using <span class="math">\(\mathbf{c}_n=e^{ik(n-1)b}\mathbf{c}_1\)</span>, we have</p>
+<div class="math">
+\[\begin{split}\hat{H}=\begin{pmatrix}\mathbf{c}_1^\dagger&amp;\mathbf{c}_2^\dagger&amp;\cdots&amp;\mathbf{c}_N^\dagger \end{pmatrix}
+\begin{pmatrix} U &amp; T &amp;0 &amp; \cdots&amp;T^\dagger\\
+T^\dagger &amp;U&amp;T&amp;\cdots&amp;0\\
+0&amp;T^\dagger&amp;U&amp;\cdots&amp;0\\
+\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+T&amp;0&amp;0&amp;T^\dagger&amp;U
+\end{pmatrix}
+\begin{pmatrix}\mathbf{c}_1\\\mathbf{c}_2\\\vdots\\\mathbf{c}_N\end{pmatrix}\end{split}\]</div>
+<div class="math">
+\[\begin{split}\Rightarrow \begin{pmatrix}\mathbf{c}_1^\dagger&amp;\mathbf{c}_1^\dagger e^{-ikb}&amp;\cdots&amp;\mathbf{c}_1^\dagger e^{-ik(N-1)b} \end{pmatrix}
+\begin{pmatrix} U &amp; T &amp;0 &amp; \cdots&amp;T^\dagger\\
+T^\dagger &amp;U&amp;T&amp;\cdots&amp;0\\
+0&amp;T^\dagger&amp;U&amp;\cdots&amp;0\\
+\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+T&amp;0&amp;0&amp;T^\dagger&amp;U
+\end{pmatrix}
+\begin{pmatrix}\mathbf{c}_1\\\mathbf{c}_1 e^{ikb}\\\vdots\\\mathbf{c}_1e^{ik(N-1)b}\end{pmatrix}\end{split}\]</div>
+<hr class="docutils" />
+<div class="math">
+\[\begin{split}=\begin{pmatrix}\mathbf{c}_1^\dagger&amp;\cdots&amp;\mathbf{c}_1^\dagger \end{pmatrix}
+\begin{pmatrix} U+Te^{ikb}+T^\dagger e^{-ikb} &amp; &amp;\\
+&amp;\ddots&amp;\\
+&amp;&amp;U+Te^{ikb}+T^\dagger e^{-ikb}
+\end{pmatrix}
+\begin{pmatrix}\mathbf{c}_1\\\vdots\\\mathbf{c}_1\end{pmatrix}\end{split}\]</div>
+<p>which gives us
+<span class="math">\(H=H(k)\oplus H(k)\cdots \oplus H(k)=\oplus_{n=1}^N H(k)\)</span> with</p>
+<div class="math">
+\[H(k)=U+Te^{ikb}+T^\dagger e^{-ikb}=\mathbf{h}(k)\cdot \mathbf{\sigma}\]</div>
+<p>with</p>
+<div class="math">
+\[\begin{split}h_x(k)=&amp;Re(v)+|w|cos(kb+arg(w))\\
+h_y(k)=&amp;-Im(v)+|w|sin(kb+arg(w))\\
+h_z(k)=&amp;0\end{split}\]</div>
+<p>with <span class="math">\(w=|w|e^{i arg(w)}\)</span>.</p>
+<hr class="docutils" />
+<div class="math">
+\[H(k)=\mathbf{h}(k)\cdot \mathbf{\sigma}\]</div>
+<p>with</p>
+<p>with eigen-energy</p>
+<div class="math">
+\[E(k)=|\mathbf(h)(k)=\pm \sqrt{h_x^2+h_y^2+h_z^2}=\pm \sqrt{|v|^2+|w|^2+2|v||w|cos(kb+arg(v)+arg(w))}\]</div>
+<p>and eigen-wavefunctions</p>
+<div class="math">
+\[\begin{split}|\pm\rangle=\begin{pmatrix}\pm e^{-i\phi(k)}\\
+1\end{pmatrix}\end{split}\]</div>
+<p>with <span class="math">\(tan\phi=h_y/h_x\)</span>.</p>
+<hr class="docutils" />
+<p>For example, set <span class="math">\(arg(v)=arg(w)=0\)</span>, we have</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/energy.png"><img alt="../../_images/energy.png" src="../../_images/energy.png" style="width: 70%;" /></a>
+</div>
+<p>Can not tell the difference <span class="math">\(|v|-|w|=\pm\delta\)</span>.</p>
+<hr class="docutils" />
+<p>Energy-band description is not completed, it can give us many
+information, but not the whole, others are hidden in the wave-function.
+Alternatively, recalling <span class="math">\(H(k)=\mathbf{h}(k)\cdot \mathbf{\sigma}\)</span>, the
+Hamiltonian should contain the whole information, but we have only used
+<span class="math">\(|h|\)</span>, in topological aspect, <span class="math">\(\mathbf{h}(k)\)</span> will suffices.</p>
+<p>Set <span class="math">\(arg(v)=0\)</span>,<span class="math">\(kb=[0,2\pi]\)</span>, we have two cases</p>
+<ul class="simple">
+<li><span class="math">\(|w|&lt;|v|, \mathbf{inter}&lt;\mathbf{intra}\)</span></li>
+<li><span class="math">\(|w|&gt;|v|, \mathbf{inter}&gt;\mathbf{intra}\)</span></li>
+</ul>
+<hr class="docutils" />
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/two.png"><img alt="two cases" src="../../_images/two.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text">two cases</span></p>
+</div>
+</div>
+<div class="section" id="winding-number">
+<h2>Winding number<a class="headerlink" href="#winding-number" title="Permalink to this headline">¶</a></h2>
+<p><span class="math">\(H(k)=\mathbf{h}(k)\cdot \mathbf{\sigma}\)</span>, <span class="math">\(\mathbf{h}(k)=0\)</span> is a
+degenerate point with <span class="math">\(|v|=|w|\)</span>, two bands cross, define
+<span class="math">\(h(k)=h_x(k)+ih_y(k)\)</span>, we have</p>
+<div class="math">
+\[\begin{split}H(k)=\begin{pmatrix}0&amp;h^*(k)\\h(k)&amp;0\end{pmatrix}\end{split}\]</div>
+<div class="math">
+\[ln(h)=ln(|h|)e^{iarg(h)}=ln(|h|)+iarg(h)\]</div>
+<p>define</p>
+<div class="math">
+\[\nu=\frac{1}{2\pi i}\int_{-\pi}^{\pi}dk\frac{d}{dk}ln(h(k))\]</div>
+<p>When</p>
+<ul class="simple">
+<li><span class="math">\(|w|&gt;|v|, \nu=1, \mathbf{inter}&gt;\mathbf{intra}\)</span></li>
+<li><span class="math">\(|w|&lt;|v|, \nu=0, \mathbf{inter}&lt;\mathbf{intra}\)</span></li>
+</ul>
+<hr class="docutils" />
+<p>A example, <span class="math">\(N=20, M=2N=40, w=1, v=0.5\)</span>, we get eigen-energys:</p>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../../_images/4.png"><img alt="eigen-energy" src="../../_images/4.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">eigen-energy</span></p>
+</div>
+<hr class="docutils" />
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/a-.png"><img alt="../../_images/a-.png" src="../../_images/a-.png" style="width: 55%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/a+.png"><img alt="../../_images/a+.png" src="../../_images/a+.png" style="width: 55%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/b-.png"><img alt="../../_images/b-.png" src="../../_images/b-.png" style="width: 55%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/b+.png"><img alt="../../_images/b+.png" src="../../_images/b+.png" style="width: 55%;" /></a>
+</div>
+<hr class="docutils" />
+<p>Edge-states:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/c1.png"><img alt="../../_images/c1.png" src="../../_images/c1.png" style="width: 55%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/c2.png"><img alt="../../_images/c2.png" src="../../_images/c2.png" style="width: 55%;" /></a>
+</div>
+</div>
+<div class="section" id="chiral-symmetry">
+<h2>Chiral symmetry<a class="headerlink" href="#chiral-symmetry" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/2.jpg"><img alt="../../_images/2.jpg" src="../../_images/2.jpg" style="width: 70%;" /></a>
+</div>
+<p>Recalling the Hamiltonian:</p>
+<div class="math">
+\[H=\sum_{n=1}^N(v_n c_{n,1}^\dagger c_{n,2}+w_nc_{n,2}^\dagger c_{n+1,1}+h.c.)\]</div>
+<p>Define projector operators:</p>
+<div class="math">
+\[P_A=\sum_n c_{n,1}^\dagger c_{n,1}, P_B=\sum_n c_{n,2}^\dagger c_{n,2}\]</div>
+<p>and the chiral operator <span class="math">\(\Sigma_z=P_A-P_B\)</span>, The matrix elements
+of <span class="math">\(\Sigma_z\)</span> vanish,
+<span class="math">\(\langle 0|c_r \Sigma c^\dagger_s|0\rangle=0\)</span> if sites <span class="math">\(r\)</span>
+and <span class="math">\(s\)</span> are in different unit cells.</p>
+<hr class="docutils" />
+<p>In first-quantization, we have</p>
+<div class="math">
+\[H=\sum_{n=1}^N(v_n |n,1\rangle\langle n,2|+w_n|n,2\rangle\langle n+1,1|+h.c.)\]</div>
+<p>and</p>
+<div class="math">
+\[P_A=\sum_n |n,1\rangle\langle n,1|, P_B=\sum_n |n,2\rangle\langle n,2|\]</div>
+<p>In matrix form, we have</p>
+<div class="math">
+\[\Sigma_z=\sigma_z\oplus\sigma_z\oplus\cdots\oplus\sigma=\oplus_{n=1}^N \sigma_z\]</div>
+<p><span class="math">\(\Sigma_z\)</span> is <em>local</em>, it does not mix site between unit cells,
+and inherits the algebra from <span class="math">\(\sigma_z\)</span>:</p>
+<div class="math">
+\[\Sigma_z^\dagger\Sigma_z=1\]</div>
+<div class="math">
+\[\Sigma_z^2=1\]</div>
+<hr class="docutils" />
+<p>Recalling</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix} U_1 &amp; T_1 &amp;0 &amp; \cdots&amp;T_N^\dagger\\
+T_1^\dagger &amp;U_2&amp;T_2&amp;\cdots&amp;0\\
+0&amp;T_2^\dagger&amp;U_3&amp;\cdots&amp;0\\
+\vdots&amp;\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+T_N&amp;0&amp;0&amp;T_{N-1}^\dagger&amp;U_N
+\end{pmatrix}\end{split}\]</div>
+<p>There are no <strong>onsite terms</strong> in the Hamiltonian, so we have</p>
+<div class="math">
+\[\Sigma_z H \Sigma_z=-H\]</div>
+<p>This is the chiral symmetry.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Actually, here, <span class="math">\(H\)</span> is defined in momentum space, but
+<span class="math">\(\Sigma_z\)</span> in real space, we should write
+<span class="math">\(\tilde{H}=U^\dagger H U\)</span> for some unitary matrix <span class="math">\(U\)</span>, but
+the property survives!</p>
+</div>
+<hr class="docutils" />
+<p>Consequences: For eigenstates <span class="math">\(|\psi_n\rangle\)</span> of <span class="math">\(H\)</span>, we
+have</p>
+<div class="math">
+\[H|\psi_n\rangle=E_n|\psi_n\rangle\]</div>
+<div class="math">
+\[H\Sigma_z|\psi_n\rangle=-\Sigma_zH|\psi_n\rangle=-\Sigma_zE_n|\psi_n\rangle=-E_n\Sigma_z|\psi_n\rangle\]\[If\]</div>
+<ul>
+<li><p class="first"><span class="math">\(E_n\neq 0\)</span>, two orthonormal states
+<span class="math">\(|\psi_n\rangle, \Sigma_z|\psi_n\rangle\)</span>, which gives</p>
+<div class="math">
+\[\begin{split}\begin{pmatrix}\alpha^* &amp;\beta^*\end{pmatrix}\begin{pmatrix}\alpha\\-\beta\end{pmatrix}=0\end{split}\]</div>
+<div class="math">
+\[\Rightarrow |\alpha|^2=|\beta|^2\]</div>
+</li>
+<li><p class="first"><span class="math">\(E_n=0\)</span>, we particularly have <span class="math">\(\Sigma_z=\Sigma_zH\)</span>,
+<span class="math">\(|\psi_n\rangle\)</span> can be eigen-states of <span class="math">\(H\)</span> and
+<span class="math">\(\Sigma\)</span> simultaneously,
+<span class="math">\(\Sigma_z|\psi_n\rangle=\pm|\psi_n\rangle\)</span>, gives
+<span class="math">\(|\psi_n\rangle=\begin{pmatrix}1 \\0\end{pmatrix}\)</span> or
+<span class="math">\(|\psi_n\rangle=\begin{pmatrix}0 \\1\end{pmatrix}\)</span></p>
+</li>
+</ul>
+</div>
+<div class="section" id="review-2">
+<h2>Review 2<a class="headerlink" href="#review-2" title="Permalink to this headline">¶</a></h2>
+<p>In the last class, we have solved 1-d atom chain with staggered hopping
+parameters and got the Hamiltonian:</p>
+<div class="math">
+\[\begin{split}H(k)=\mathbf{h}(k)\cdot \mathbf{\sigma}=\begin{pmatrix}0&amp;h_x-ih_y\\h_x+ih_y&amp;0\end{pmatrix}=|h(k)|\begin{pmatrix}0&amp;e^{-i\phi(k)}\\e^{i\phi(k)}&amp;0\end{pmatrix}\end{split}\]</div>
+<p>with <span class="math">\(tan\phi=h_y/h_x\)</span>.</p>
+<p>Eigen-values are <span class="math">\(E(k)=\pm|h(k)|\)</span>, with eigen-functions:
+<span class="math">\(|\pm\rangle=\begin{pmatrix}\pm e^{-i\phi(k)}\\ 1\end{pmatrix}\)</span>.</p>
+<hr class="docutils" />
+<p><span class="math">\(\mathbf{h}(k)\)</span> depicted as follow:</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/two.png"><img alt="Topological transition" src="../../_images/two.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text">Topological transition</span></p>
+</div>
+</div>
+<div class="section" id="topological-transition">
+<h2>Topological transition<a class="headerlink" href="#topological-transition" title="Permalink to this headline">¶</a></h2>
+<p>We have already seen, for <span class="math">\(|w|&gt;|v|\)</span> or <span class="math">\(|w|&lt;|v|\)</span>, we got
+different <strong>winding number</strong>, means there is a topological transition at
+<span class="math">\(|w|=|v|\)</span>. In the energy-band point of view, it means the gap
+between two energy bands closes (across each other) and reopens. There
+are two ways to change the winding number and get a topological
+transition:</p>
+<ol class="arabic simple">
+<li>Pull the path through the origin in the <span class="math">\(h_x-h_y\)</span> plane.</li>
+<li>Lift it out of the plane (breaking the chiral symmetry).</li>
+</ol>
+<hr class="docutils" />
+<p>Case 1(a): <span class="math">\(v=0.5, w=0\to 1\)</span></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/a.jpg"><img alt="../../_images/a.jpg" src="../../_images/a.jpg" style="width: 70%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/figure_1a.png"><img alt="../../_images/figure_1a.png" src="../../_images/figure_1a.png" style="width: 70%;" /></a>
+</div>
+<hr class="docutils" />
+<p>Case 1(b): <span class="math">\(w=1, v=2.5\to 0\)</span></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/c.jpg"><img alt="../../_images/c.jpg" src="../../_images/c.jpg" style="width: 70%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/figure_3.png"><img alt="../../_images/figure_3.png" src="../../_images/figure_3.png" style="width: 70%;" /></a>
+</div>
+<hr class="docutils" />
+<p>Case 2: Sublattice potential <span class="math">\(H_{sublattice}=u\sigma_z\)</span>. Recalling</p>
+<div class="math">
+\[H(k)=U+Te^{ikb}+T^\dagger e^{-ikb}\]</div>
+<p>with
+<span class="math">\(U=\begin{pmatrix}0&amp;v\\v^*&amp;0\end{pmatrix},U=\begin{pmatrix}0&amp;0\\w&amp;0\end{pmatrix}\)</span>,
+now <span class="math">\(U\)</span> changes to
+<span class="math">\(U=\begin{pmatrix}u&amp;v\\v^*&amp;-u\end{pmatrix}\)</span>, and
+<span class="math">\(H(k)=\mathbf{h}(k)\cdot\mathbf{\sigma}\)</span> with <span class="math">\(h_z(k)=u\)</span>.</p>
+<p>Set <span class="math">\(w=1, v=1.5-cos\theta, u=sin\theta, \theta=0\to \pi\)</span>,</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/b.jpg"><img alt="../../_images/b.jpg" src="../../_images/b.jpg" style="width: 70%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/figure_2.png"><img alt="../../_images/figure_2.png" src="../../_images/figure_2.png" style="width: 70%;" /></a>
+</div>
+<hr class="docutils" />
+<p>Case 3: Charge Pump: Using the Hamiltonian
+<span class="math">\(H=u(t)\sum\limits_{i=1}^N(-1)^{i-1}c_i^{\dagger}c_i+\sum\limits_{i=1}^N[t_0+\delta(t)(-1)^i](c_i^{\dagger}c_{i+1}+h.c.)\)</span>,
+with <span class="math">\(u(t)=u_0 sin\theta, \delta(t)=\delta_0 cos\theta\)</span>, add time
+variation with <span class="math">\(\theta=2\pi t/T\)</span>, in previous notation,
+<span class="math">\(v=t_0-\delta(t), w=t_0+\delta(t)\)</span>. set
+<span class="math">\(u=sin\theta, v=0.75-0.25cos\theta, w=0.75+0.25cos\theta\)</span>, the
+vector <span class="math">\(\vec{h(k)}\)</span> is</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/5a.png"><img alt="../../_images/5a.png" src="../../_images/5a.png" style="width: 50%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/5b.png"><img alt="../../_images/5b.png" src="../../_images/5b.png" style="width: 50%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/5c.png"><img alt="../../_images/5c.png" src="../../_images/5c.png" style="width: 50%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/5d.png"><img alt="../../_images/5d.png" src="../../_images/5d.png" style="width: 50%;" /></a>
+</div>
+<hr class="docutils" />
+<p>The energy band evolution is</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/figure_4.png"><img alt="energy4" src="../../_images/figure_4.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">energy4</span></p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/1a.png"><img alt="../../_images/1a.png" src="../../_images/1a.png" style="width: 50%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/2a.png"><img alt="../../_images/2a.png" src="../../_images/2a.png" style="width: 50%;" /></a>
+</div>
+</div>
+<div class="section" id="winding-number-v-s-zak-phase">
+<h2>Winding number v.s. Zak phase<a class="headerlink" href="#winding-number-v-s-zak-phase" title="Permalink to this headline">¶</a></h2>
+<p>From</p>
+<div class="math">
+\[\begin{split}H(k)=\begin{pmatrix}0&amp;h^*(k)\\h(k)&amp;0\end{pmatrix}\end{split}\]</div>
+<div class="math">
+\[ln(h)=ln(|h|)e^{iarg(h)}=ln(|h|)+iarg(h)\]</div>
+<p>We have defined the winding number</p>
+<div class="math">
+\[\nu=\frac{1}{2\pi i}\int_{-\pi}^{\pi}dk\frac{d}{dk}ln(h(k))=\frac{1}{2\pi}arg(h)\left.\right|_{-\pi}^{\pi}=1 \ \textit{or}\  0\]</div>
+<p>From the Zak phase definition:</p>
+<div class="math">
+\[\gamma=i\oint\langle\psi|\nabla_k|\psi\rangle\]</div>
+<p>Recalling
+<span class="math">\(|\psi\rangle=\frac{1}{\sqrt{2}}\begin{pmatrix}\pm e^{-i\phi(k)}\\ 1\end{pmatrix}\Rightarrow\gamma=\frac{1}{{2}}\oint dk\nabla_k\phi=\pm\pi \ \textit{or}\  0\)</span>.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2.html" class="btn btn-neutral float-right" title="Lecture 2 : Berry Phase and Chern number">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="main.html" class="btn btn-neutral" title="Lecture notes"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, bczhu.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Lecture 2 : Berry Phase and Chern number &mdash; Physics 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Physics 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Lecture notes" href="main.html"/>
+        <link rel="next" title="Berry’s Phase" href="../Berry&#39;s Phase/main.html"/>
+        <link rel="prev" title="Lecture 1 : 1-d SSH model" href="1.html"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42580598-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8a3e22ee1e151444cc6469d69651f3eb' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../../index.html" class="fa fa-home"> Physics</a>
+        
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CM/Lagrangian.html">Phase space Lagrangian</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CM/Lagrangian.html#regular-derivation">Regular derivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CM/Lagrangian.html#dynamic-system">Dynamic system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CM/Lagrangian.html#id4">Phase space Lagrangian</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="main.html">Lecture notes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">Lecture 1 : 1-d SSH model</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Lecture 2 : Berry Phase and Chern number</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Berry's Phase/main.html">Berry&#8217;s Phase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Berry's Phase/Preliminary.html">Preliminary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Berry's Phase/main.html#some-topics">some topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Weyl_semi-metal.html">Weyl Semi-metal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Weyl_semi-metal.html#graphene">Graphene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Weyl_semi-metal.html#three-dimension-weyl-semi-metal-and-chern-number">Three dimension: Weyl semi-metal and Chern number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Weyl_semi-metal.html#bulk-boundary-corresponding">Bulk-boundary corresponding</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CMP/linear response theory/main.html">Linear response theory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CMP/linear response theory/Kubo_formula.html">Kubo formula</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../CMP/Fermi's_Golden_rule.html">Fermi&#8217;s Golden rule</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Python/note.html">Python 学习</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Physics</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="main.html">Lecture notes</a> &raquo;</li>
+      
+    <li>Lecture 2 : Berry Phase and Chern number</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/TI/Lecture notes/2.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="lecture-2-berry-phase-and-chern-number">
+<h1>Lecture 2 : Berry Phase and Chern number<a class="headerlink" href="#lecture-2-berry-phase-and-chern-number" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="berry-phase-review">
+<h2>Berry Phase review<a class="headerlink" href="#berry-phase-review" title="Permalink to this headline">¶</a></h2>
+<p>Assuming a physical system is depended on some parameters <span class="math">\(\mathbf{R}=(R_1,R_2,\cdots,R_N)\)</span>, we have the <em>snapshot</em> Hamiltonian <span class="math">\(H(\mathbf{R})\)</span>, its eigen-values and eigen-states:</p>
+<div class="math">
+\[H(\mathbf{R})|n(\mathbf{R})\rangle=E_n(\mathbf{R})|n(\mathbf{R})\rangle\]</div>
+<p><strong>where</strong> <span class="math">\(|n(\mathbf{R})\rangle\)</span> <strong>can have an arbitrary phase
+prefactor</strong>.</p>
+<p>The parameters <span class="math">\(\mathbf{R(t)}\)</span> are slowly changed with time <span class="math">\(t\)</span>,
+then the adiabatic evolution of time-dependent Schrodinger equation:</p>
+<div class="math">
+\[i\frac{d}{dt}|\psi(t)\rangle=H(\mathbf{R(t)})|\psi(t)\rangle\]</div>
+<p>Take the
+Ansatz:  <span class="math">\(|\psi(t)\rangle=e^{i\gamma_n(t)}e^{-i\int_0^tE_n(\mathbf{R(t')})dt'}|n(\mathbf{R(t)})\rangle\)</span>,
+we have</p>
+<div class="math">
+\[-\left(\frac{d}{dt}\gamma_n\right)|n\rangle+i\left|\frac{d}{dt}n\right\rangle=0\]</div>
+<hr class="docutils" />
+<p>That gives the Berry phase expression:</p>
+<div class="math">
+\[\gamma_n(\mathcal{C})=\int_\mathcal{C}i\langle n(\mathbf{R})|\nabla_{\mathbf{R}}n(\mathbf{R})\rangle d\mathbf{R}\]</div>
+<p>Define <em>Berry connection</em>:</p>
+<div class="math">
+\[\mathbf{A}^{(n)}(\mathbf{R})=i\langle n(\mathbf{R})|\nabla_{\mathbf{R}}n(\mathbf{R})\rangle=-Im\langle n(\mathbf{R})|\nabla_{\mathbf{R}}n(\mathbf{R})\rangle\]</div>
+<p>Gauge transformation:</p>
+<div class="math">
+\[|n(\mathbf{R})\rangle \to e^{i\alpha(\mathbf{R})}|n(\mathbf{R})\rangle\]</div>
+<div class="math">
+\[\mathbf{A}^{(n)}(\mathbf{R}) \to \mathbf{A}^{(n)}(\mathbf{R})-\nabla_{\mathbf{R}}\alpha(\mathbf{R})\]</div>
+<p><span class="math">\(\gamma=\oint\mathbf{A}(\mathbf{R})d\mathbf{R}\)</span> is gauge invariant.</p>
+<hr class="docutils" />
+<p>Gauge and Parallel transportation: recalling the arbitrary phase</p>
+<div class="math">
+\[|n(\mathbf{R})\rangle \to e^{i\alpha(\mathbf{R})}|n(\mathbf{R})\rangle\]</div>
+<p>why shouldn&#8217;t we choose one which makes</p>
+<div class="math">
+\[\frac{d}{dt}|n\rangle\equiv 0\]</div>
+<p>from</p>
+<div class="math">
+\[-\left(\frac{d}{dt}\gamma_n\right)|n\rangle+i\left|\frac{d}{dt}n\right\rangle=0\]</div>
+<p>then we have</p>
+<div class="math">
+\[\gamma_n=0\]</div>
+<p>There is no Berry Phase in this frame, which is called <em>inertial
+frame</em>, the condition <span class="math">\(\frac{d}{dt}|n\rangle\equiv 0\)</span> is called
+<em>parallel transportation</em>. All the information resorted to
+<span class="math">\(|n(\mathbf{R})\rangle\)</span>, similar to a transformation from <em>active
+frame</em> to <em>passive frame</em>.</p>
+</div>
+<div class="section" id="berry-curvature">
+<h2>Berry curvature<a class="headerlink" href="#berry-curvature" title="Permalink to this headline">¶</a></h2>
+<p>Define the <em>Berry curvature</em>:</p>
+<div class="math">
+\[\mathbf{B}(\mathbf{R})=\nabla_{\mathbf{R}}\times \mathbf{A}^{(n)}(\mathbf{R})\]</div>
+<p>Using Stokes theorem, we have for the Berry Phase:</p>
+<div class="math">
+\[\gamma_n(\mathcal{C})=\int_\mathcal{S}\mathbf{B}^{(n)}(\mathbf{R})d\mathcal{S}\]</div>
+<p>where <span class="math">\(\mathcal{S}\)</span> is any surface whose boundary is the loop
+<span class="math">\(\mathcal{C}\)</span>.</p>
+<p>Two useful formula:</p>
+<ul class="simple">
+<li><span class="math">\(B_j=\epsilon_{jkl}\partial_kA_l=-Im\epsilon_{jkl}\partial_k\langle n|\partial_ln\rangle=-Im\epsilon_{jkl}\langle\partial_kn|\partial_ln\rangle\)</span>,
+that is
+<span class="math">\(\mathbf{B}^{(n)}=-Im\sum\limits_{n'\neq n}\langle\nabla n|n'\rangle\times\langle n'|\nabla n\rangle\)</span>.</li>
+</ul>
+<hr class="docutils" />
+<ul>
+<li><p class="first"><span class="math">\(\mathbf{B}^{(n)}=-Im\sum\limits_{n'\neq n}\langle\nabla n|n'\rangle\times\langle n'|\nabla n\rangle\)</span>,
+to calculate <span class="math">\(\langle n'|\nabla n\rangle\)</span>, start from:</p>
+<div class="math">
+\[H(\mathbf{R})|n\rangle=E_n|n\rangle\]</div>
+<div class="math">
+\[\Rightarrow (\nabla H)|n\rangle+H|\nabla n\rangle=(\nabla E_n)|n\rangle+E_n|\nabla n\rangle\]</div>
+<div class="math">
+\[\Rightarrow \langle n'|\nabla H|n\rangle+\langle n'|H|\nabla n\rangle=E_n\langle n'|\nabla n\rangle\]</div>
+<div class="math">
+\[\Rightarrow \langle n'|\nabla n\rangle=\frac{\langle n'|\nabla H|n\rangle}{E_n-E_{n'}}\]</div>
+</li>
+</ul>
+<p>then we get:</p>
+<blockquote>
+<div><div class="math">
+\[\mathbf{B}^{(n)}=-Im\sum\limits_{n'\neq n}\langle\nabla n|n'\rangle\times\langle n'|\nabla n\rangle=-Im\sum\limits_{n'\neq n}\frac{\langle n|\nabla H|n'\rangle\times\langle n'|\nabla H|n\rangle}{(E_n-E_{n'})^2}\]</div>
+</div></blockquote>
+<p>which is gauge invariant!</p>
+</div>
+<div class="section" id="berry-curvature-from-perturbation-theory">
+<h2>Berry curvature from perturbation theory<a class="headerlink" href="#berry-curvature-from-perturbation-theory" title="Permalink to this headline">¶</a></h2>
+<p>We can use time-independent perturbation theory to derive the changes of
+instant snapshot basis:</p>
+<div class="math">
+\[H(\mathbf{R})|n(\mathbf{R})\rangle=E_n(\mathbf{R})|n(\mathbf{R})\rangle\]</div>
+<p>we have</p>
+<div class="math">
+\[|n(\mathbf{R+\Delta R})\rangle=|n(\mathbf{R})\rangle+\sum_{m\neq n}\frac{\langle m|H(\mathbf{R+\Delta R})-H(\mathbf{R})|n\rangle}{E_n-E_m}|m(\mathbf{R})\rangle\]</div>
+<p>We see that <span class="math">\(\langle n|\Delta n(\mathbf{R})\rangle=0\)</span>, which means we
+have used <em>parallel transport</em> gauge, more general, we should add a
+arbitrary phase factor in the above equation for
+<span class="math">\(|n(\mathbf{R+\Delta R})\rangle\)</span>.</p>
+<div class="math">
+\[\nabla_{\mathbf{R}}|n\rangle=\sum_{m\neq n}\frac{\langle m|\nabla_{\mathbf{R}}H|n\rangle}{E_n-E_m}|m\rangle\]</div>
+<hr class="docutils" />
+<p>From
+<span class="math">\(\mathbf{B}^{(n)}=-Im\sum\limits_{n'\neq n}\langle\nabla n|n'\rangle\times\langle n'|\nabla n\rangle\)</span>,
+we also get:</p>
+<div class="math">
+\[\mathbf{B}^{(n)}=-Im\sum_{n'\neq n}\frac{\langle n|\nabla H|n'\rangle\times\langle n'|\nabla H|n\rangle}{(E_n-E_{n'})^2}\]</div>
+<p>Also notice:</p>
+<div class="math">
+\[\begin{split}\sum_n\mathbf{B}^{(n)}=&amp;-Im\sum_n\sum_{n'\neq n}\frac{\langle n|\nabla H|n'\rangle\times\langle n'|\nabla H|n\rangle}{(E_n-E_{n'})^2}\\
+=&amp;-Im\sum_n\sum_{n'&lt; n}\frac{\langle n|\nabla H|n'\rangle\times\langle n'|\nabla H|n\rangle+\langle n'|\nabla H|n\rangle\times\langle n|\nabla H|n'\rangle}{(E_n-E_{n'})^2}\\
+=&amp;0\end{split}\]</div>
+<p>Which gives:</p>
+<div class="math">
+\[\sum_n\gamma_n(\mathcal{C})=\int_{\mathcal{S}}\sum_n\mathbf{B}^{(n)}(\mathbf{R})d\mathcal{S}=0\]</div>
+</div>
+<div class="section" id="benchmark-spin-1-2">
+<h2>Benchmark: Spin-1/2<a class="headerlink" href="#benchmark-spin-1-2" title="Permalink to this headline">¶</a></h2>
+<p><strong>Gauge!Gauge!Gauge!</strong></p>
+<p>2-level Hamiltonian
+<span class="math">\(H(\mathbf{R})=h_0(\mathbf{R})\sigma_0+\mathbf{h}(\mathbf{R})\cdot\mathbf{\sigma}\)</span>, we
+can set <span class="math">\(h_0=0\)</span>, because it does not affect the eigenstates,
+eigen-energy are <span class="math">\(\pm|\mathbf{h}|\)</span>, introduce the unit
+vector:<span class="math">\(\hat{\mathbf{h}}=\mathbf{h}/|\mathbf{h}|\)</span>, the endpoints of
+<span class="math">\(\hat{\mathbf{h}}\)</span> map out the surface of a unit sphere, called the
+<em>Bloch sphere</em> shows below:</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/11.png"><img alt="Bloch sphere" src="../../_images/11.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">Bloch sphere</span></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Berry&#39;s Phase/main.html" class="btn btn-neutral float-right" title="Berry’s Phase">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="1.html" class="btn btn-neutral" title="Lecture 1 : 1-d SSH model"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, bczhu.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

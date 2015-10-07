@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Lecture notes &mdash; Physics 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Physics 0.1 documentation" href="../../index.html"/>
+        <link rel="next" title="Lecture 1 : 1-d SSH model" href="1.html"/>
+        <link rel="prev" title="Phase space Lagrangian" href="../../CM/Lagrangian.html"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42580598-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8a3e22ee1e151444cc6469d69651f3eb' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../../index.html" class="fa fa-home"> Physics</a>
+        
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CM/Lagrangian.html">Phase space Lagrangian</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CM/Lagrangian.html#regular-derivation">Regular derivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CM/Lagrangian.html#dynamic-system">Dynamic system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CM/Lagrangian.html#id4">Phase space Lagrangian</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Lecture notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1.html">Lecture 1 : 1-d SSH model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">Lecture 2 : Berry Phase and Chern number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html">Lecture 3 : Chern Insulator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Berry's Phase/main.html">Berry&#8217;s Phase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Berry's Phase/Preliminary.html">Preliminary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Berry's Phase/main.html#some-topics">some topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Weyl_semi-metal.html">Weyl Semi-metal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Weyl_semi-metal.html#graphene">Graphene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Weyl_semi-metal.html#three-dimension-weyl-semi-metal-and-chern-number">Three dimension: Weyl semi-metal and Chern number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Weyl_semi-metal.html#bulk-boundary-corresponding">Bulk-boundary corresponding</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CMP/linear response theory/main.html">Linear response theory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../CMP/linear response theory/Kubo_formula.html">Kubo formula</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../CMP/Fermi's_Golden_rule.html">Fermi&#8217;s Golden rule</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Python/note.html">Python 学习</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Physics</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Lecture notes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/TI/Lecture notes/main.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="lecture-notes">
+<span id="id1"></span><h1>Lecture notes<a class="headerlink" href="#lecture-notes" title="Permalink to this headline">¶</a></h1>
+<p>Here is the lecture notes on TI, which is partly based on the lecture notes given by Janos Asboth, Laszlo Oroszlany, and Andras Palyi, <a class="reference external" href="http://fizipedia.bme.hu/images/1/14/Topological_insulators.pdf">Here</a> is the resource, and you can also download a copy <a class="reference external" href="files/TI.pdf">here</a>.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1.html">Lecture 1 : 1-d SSH model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1.html#the-su-schrieffer-heeger-ssh-model">The Su-Schrieffer&#8211;Heeger (SSH) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.html#tight-binding-method-first-quantization">Tight-binding method: first quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.html#second-quantization">Second quantization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.html#review">Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.html#energy-band-and-topology">Energy band and topology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.html#winding-number">Winding number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.html#chiral-symmetry">Chiral symmetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.html#review-2">Review 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.html#topological-transition">Topological transition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.html#winding-number-v-s-zak-phase">Winding number v.s. Zak phase</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2.html">Lecture 2 : Berry Phase and Chern number</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2.html#berry-phase-review">Berry Phase review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html#berry-curvature">Berry curvature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html#berry-curvature-from-perturbation-theory">Berry curvature from perturbation theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html#benchmark-spin-1-2">Benchmark: Spin-1/2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3.html">Lecture 3 : Chern Insulator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3.html#menu">Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html#quantum-hall-insulator">Quantum Hall Insulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html#edge-states-with-quantization-of-the-hall-conductivity">Edge states with Quantization of the Hall conductivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html#half-bhz-model">Half BHZ model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html#chern-number-using">Chern number using <span class="math">\(\mathbf{h}\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html#chern-number-as-a-skyrmion-number">Chern number as a Skyrmion number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html#low-energy-hamiltonian">Low-energy Hamiltonian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html#chern-number-as-an-obstruction">Chern number as an obstruction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html#haldane-model">Haldane Model</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Other good Books and review papers on this subject:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.amazon.com/Topological-Insulators-Superconductors-Andrei-Bernevig/dp/069115175X">Topological Insulators and Topological Superconductors by Bernevig, B.</a>.</li>
+<li><a class="reference external" href="http://www.amazon.com/Topological-Insulators-Equation-Condensed-Solid-State/dp/3642328571/ref=sr_1_2?s=books&amp;ie=UTF8&amp;qid=1415444346&amp;sr=1-2&amp;keywords=Topological+Insulators">Topological Insulators: Dirac Equation in Condensed Matters by Shun-Qing Shen</a>.</li>
+<li><ol class="first upperalpha" start="13">
+<li>Fruchart and D. Carpentier, Comptes Rendus Physique 14, 779 (2013).</li>
+</ol>
+</li>
+<li><ol class="first upperalpha" start="13">
+<li>Kohmoto, Annals of Physics 160, 343 (1985).</li>
+</ol>
+</li>
+<li><ol class="first upperalpha" start="4">
+<li>Xiao, M.-C. Chang, and Q. Niu, Reviews of Modern Physics 82, 1959 (2010).</li>
+</ol>
+</li>
+<li><ol class="first upperalpha" start="25">
+<li>Mokrousov and F. Freimuth, arXiv:1407.2847 [cond-Mat] (2014).</li>
+</ol>
+</li>
+</ul>
+<p>More geometrical staffs at this one <a class="reference external" href="http://www.amazon.com/Geometry-Topology-Physics-Edition-Graduate/dp/0750306068">Geometry, Topology and Physics, by Nakahara</a>.</p>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="1.html" class="btn btn-neutral float-right" title="Lecture 1 : 1-d SSH model">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../CM/Lagrangian.html" class="btn btn-neutral" title="Phase space Lagrangian"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, bczhu.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
